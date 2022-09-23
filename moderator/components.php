@@ -559,9 +559,6 @@ $value = array_values(User::getMaterialData());?>
         document.getElementById("bitumin").value = users[4];
         document.getElementById("layingCharge").value = users[5];
         document.getElementById("mixingCharge").value = users[6];
-        console.log("price printed");
-
-        document.getElementById("stains").innerHTML = "hello"
 
       </script>
 
