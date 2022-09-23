@@ -37,11 +37,11 @@
 
 		<div class="mod-auth">
 			<h2>Moderator Login</h2>
-			<form method="post" action="">
-				<input type="text" class="id-mod" placeholder="Enter Login Id">
+			<form method="post" action="moderator/moderator.php">
+				<input name="id" type="text" class="id-mod" placeholder="Enter Login Id">
 				<br>
 				<br>
-				<input class="password-mod" type="password" placeholder="Enter Your Password">
+				<input name="password" class="password-mod" type="password" placeholder="Enter Your Password">
 				<br>
 				<br>
 				<input type="submit" class="btn btn-primary">

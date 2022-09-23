@@ -1,6 +1,17 @@
 <?php
 
+include "../libs/load.php";
+
+
+$id = $_POST['id'];
+$pass = $_POST['password'];
+
+$result = User::moderatorLogin($id, $pass);
+
+print("Username : ".$result);
+
 ?>
+
 
 <!DOCTYPE html>
 <html>
@@ -29,6 +40,11 @@
 </head>
 
 <body>
+
+	<?php
+if ($result) {
+    ?>
+
 	<div class="page">
 		<!-- Main Navbar-->
 		<header class="header z-index-50">
@@ -128,7 +144,8 @@
 												</div>
 												<div class="ms-3">
 													<span class="h6 d-block fw-normal mb-1 text-xs text-gray-600">Server
-														Rebooted</span>
+														Rebooted
+													</span>
 													<small class="small text-gray-600">8 minutes ago</small>
 												</div>
 											</div>
@@ -172,8 +189,8 @@
 											<img class="img-fluid rounded-circle" src="img/avatar-1.jpg" alt="..."
 												width="45">
 											<div class="ms-3">
-												<span class="h6 d-block fw-normal mb-1 text-sm text-gray-600">Jason
-													Doe</span>
+												<span class="h6 d-block fw-normal mb-1 text-sm text-gray-600">Jason Doe
+												</span>
 												<small class="small text-gray-600"> Sent You Message</small>
 											</div>
 										</a>
@@ -183,8 +200,8 @@
 											<img class="img-fluid rounded-circle" src="img/avatar-2.jpg" alt="..."
 												width="45">
 											<div class="ms-3">
-												<span class="h6 d-block fw-normal mb-1 text-sm text-gray-600">Jason
-													Doe</span>
+												<span class="h6 d-block fw-normal mb-1 text-sm text-gray-600">Jason Doe
+												</span>
 												<small class="small text-gray-600"> Sent You Message</small>
 											</div>
 										</a>
@@ -194,8 +211,8 @@
 											<img class="img-fluid rounded-circle" src="img/avatar-3.jpg" alt="..."
 												width="45">
 											<div class="ms-3">
-												<span class="h6 d-block fw-normal mb-1 text-sm text-gray-600">Jason
-													Doe</span>
+												<span class="h6 d-block fw-normal mb-1 text-sm text-gray-600">Jason Doe
+												</span>
 												<small class="small text-gray-600"> Sent You Message</small>
 											</div>
 										</a>
@@ -343,162 +360,329 @@
 				<!-- Page Header-->
 				<header class="bg-white shadow-sm px-4 py-3 z-index-20">
 					<div class="container-fluid px-0">
-						<h2 class="mb-0 p-1">Product Price</h2>
+						<h2 class="mb-0 p-1">Dashboard</h2>
 					</div>
 				</header>
-				<!-- Breadcrumb-->
-				<div class="bg-white">
+				<!-- Dashboard Counts Section-->
+				<section class="pb-0">
 					<div class="container-fluid">
-						<nav aria-label="breadcrumb">
-							<ol class="breadcrumb mb-0 py-3">
-								<li class="breadcrumb-item">
-									<a class="fw-light" href="index.html">Home</a>
-								</li>
-								<li class="breadcrumb-item active fw-light" aria-current="page">Product Price</li>
-							</ol>
-						</nav>
-					</div>
-				</div>
-				<!-- Forms Section-->
-				<section class="forms">
-					<div class="container-fluid">
-						<div class="row">
-							<!-- PRICE Form-->
-							<div class="col-lg-6">
-								<div class="card">
-									<div class="card-header">
-										<div class="card-close">
-											<div class="dropdown">
-												<button class="dropdown-toggle text-sm" type="button" id="closeCard1"
-													data-bs-toggle="dropdown" aria-expanded="false">
-													<i class="fas fa-ellipsis-v"></i>
-												</button>
-												<div class="dropdown-menu dropdown-menu-end shadow-sm"
-													aria-labelledby="closeCard1">
-													<a class="dropdown-item py-1 px-3 remove" href="#">
-														<i class="fas fa-times"></i>Close</a>
-													<a class="dropdown-item py-1 px-3 edit" href="#">
-														<i class="fas fa-cog"></i>Edit</a>
+						<div class="card mb-0">
+							<div class="card-body">
+								<div class="row gx-5 bg-white">
+									<!-- Item -->
+									<div class="col-xl-3 col-sm-6 py-4 border-lg-end border-gray-200">
+										<div class="d-flex align-items-center">
+											<div class="icon flex-shrink-0 bg-violet">
+												<svg class="svg-icon svg-icon-sm svg-icon-heavy">
+													<use xlink:href="#user-1"> </use>
+												</svg>
+											</div>
+											<div class="mx-3">
+												<h6 class="h4 fw-light text-gray-600 mb-3">No.of
+													<br>Petition Signed
+												</h6>
+												<div class="progress" style="height: 4px">
+													<div class="progress-bar bg-violet" role="progressbar"
+														style="width: 25%; height: 4px;" aria-valuenow="25"
+														aria-valuemin="0" aria-valuemax="100"></div>
 												</div>
+											</div>
+											<div class="number">
+												<strong class="text-lg">25</strong>
 											</div>
 										</div>
-										<h3 class="h4 mb-0">Concerate Road</h3>
 									</div>
-									<div class="card-body">
-										<p class="text-sm">Upadate to the latest price for best estimation</p>
-										<form>
-											<label class="form-label" for="exampleInputPassword1">Cement Price per
-												Kg</label>
-											<div class="input-group mb-3">
-												<span class="input-group-text">₹</span>
-												<span class="input-group-text">0.00</span>
-												<input class="form-control" type="text"
-													aria-label="Dollar amount (with dot and two decimal places)"
-													value="50">
+									<!-- Item -->
+									<div class="col-xl-3 col-sm-6 py-4 border-lg-end border-gray-200">
+										<div class="d-flex align-items-center">
+											<div class="icon flex-shrink-0 bg-red">
+												<svg class="svg-icon svg-icon-sm svg-icon-heavy">
+													<use xlink:href="#survey-1"> </use>
+												</svg>
 											</div>
-
-											<label class="form-label" for="exampleInputPassword1">Mcent Price per
-												Kg</label>
-											<div class="input-group mb-3">
-												<span class="input-group-text">₹</span>
-												<span class="input-group-text">0.00</span>
-												<input class="form-control" type="text"
-													aria-label="Dollar amount (with dot and two decimal places)">
-											</div>
-
-											<label class="form-label" for="exampleInputPassword1">Agrigator Price per
-												Kg</label>
-											<div class="input-group mb-3">
-												<span class="input-group-text">₹</span>
-												<span class="input-group-text">0.00</span>
-												<input class="form-control" type="text"
-													aria-label="Dollar amount (with dot and two decimal places)">
-											</div>
-
-											<label class="form-label" for="exampleInputPassword1">Labour Charge per
-												person</label>
-											<div class="input-group mb-3">
-												<span class="input-group-text">₹</span>
-												<span class="input-group-text">0.00</span>
-												<input class="form-control" type="text"
-													aria-label="Dollar amount (with dot and two decimal places)">
-											</div>
-
-
-											<button class="btn btn-primary" type="submit">Upadte Price</button>
-										</form>
-									</div>
-								</div>
-							</div>
-							<!-- Horizontal Form-->
-							<div class="col-lg-6">
-								<div class="card">
-									<div class="card-header">
-										<div class="card-close">
-											<div class="dropdown">
-												<button class="dropdown-toggle text-sm" type="button" id="closeCard1"
-													data-bs-toggle="dropdown" aria-expanded="false">
-													<i class="fas fa-ellipsis-v"></i>
-												</button>
-												<div class="dropdown-menu dropdown-menu-end shadow-sm"
-													aria-labelledby="closeCard1">
-													<a class="dropdown-item py-1 px-3 remove" href="#">
-														<i class="fas fa-times"></i>Close</a>
-													<a class="dropdown-item py-1 px-3 edit" href="#">
-														<i class="fas fa-cog"></i>Edit</a>
+											<div class="mx-3">
+												<h6 class="h4 fw-light text-gray-600 mb-3">Work
+													<br>Orders
+												</h6>
+												<div class="progress" style="height: 4px">
+													<div class="progress-bar bg-red" role="progressbar"
+														style="width: 70%; height: 4px;" aria-valuenow="70"
+														aria-valuemin="0" aria-valuemax="100"></div>
 												</div>
+											</div>
+											<div class="number">
+												<strong class="text-lg">70</strong>
 											</div>
 										</div>
-										<h3 class="h4 mb-0">Tor Road</h3>
 									</div>
-									<div class="card-body">
-										<p class="text-sm">Upadate to the latest price for best estimation</p>
-										<form class="form-horizontal">
-
-											<label class="form-label" for="exampleInputPassword1">Agrigator
-												Price</label>
-											<div class="input-group mb-3">
-												<span class="input-group-text">₹</span>
-												<span class="input-group-text">0.00</span>
-												<input class="form-control" type="text"
-													aria-label="Dollar amount (with dot and two decimal places)">
+									<!-- Item -->
+									<div class="col-xl-3 col-sm-6 py-4 border-lg-end border-gray-200">
+										<div class="d-flex align-items-center">
+											<div class="icon flex-shrink-0 bg-green">
+												<svg class="svg-icon svg-icon-sm svg-icon-heavy">
+													<use xlink:href="#numbers-1"> </use>
+												</svg>
 											</div>
-
-											<label class="form-label" for="exampleInputPassword1">Bitumin Price</label>
-											<div class="input-group mb-3">
-												<span class="input-group-text">₹</span>
-												<span class="input-group-text">0.00</span>
-												<input class="form-control" type="text"
-													aria-label="Dollar amount (with dot and two decimal places)">
-											</div>
-
-											<label class="form-label" for="exampleInputPassword1">Laying Charge</label>
-											<div class="input-group mb-3">
-												<span class="input-group-text">₹</span>
-												<span class="input-group-text">0.00</span>
-												<input class="form-control" type="text"
-													aria-label="Dollar amount (with dot and two decimal places)">
-											</div>
-
-											<label class="form-label" for="exampleInputPassword1">Mixing Charge</label>
-											<div class="input-group mb-3">
-												<span class="input-group-text">₹</span>
-												<span class="input-group-text">0.00</span>
-												<input class="form-control" type="text"
-													aria-label="Dollar amount (with dot and two decimal places)">
-											</div>
-											<div class="row">
-												<div class="col-sm-9 ms-auto">
-													<input class="btn btn-primary" type="submit" value="Update Price">
+											<div class="mx-3">
+												<h6 class="h4 fw-light text-gray-600 mb-3">New
+													<br>Invoices
+												</h6>
+												<div class="progress" style="height: 4px">
+													<div class="progress-bar bg-green" role="progressbar"
+														style="width: 40%; height: 4px;" aria-valuenow="40"
+														aria-valuemin="0" aria-valuemax="100"></div>
 												</div>
 											</div>
-										</form>
+											<div class="number">
+												<strong class="text-lg">40</strong>
+											</div>
+										</div>
+									</div>
+									<!-- Item -->
+									<div class="col-xl-3 col-sm-6 py-4">
+										<div class="d-flex align-items-center">
+											<div class="icon flex-shrink-0 bg-orange">
+												<svg class="svg-icon svg-icon-sm svg-icon-heavy">
+													<use xlink:href="#list-details-1"> </use>
+												</svg>
+											</div>
+											<div class="mx-3">
+												<h6 class="h4 fw-light text-gray-600 mb-3">Open
+													<br>Cases
+												</h6>
+												<div class="progress" style="height: 4px">
+													<div class="progress-bar bg-orange" role="progressbar"
+														style="width: 50%; height: 4px;" aria-valuenow="50"
+														aria-valuemin="0" aria-valuemax="100"></div>
+												</div>
+											</div>
+											<div class="number">
+												<strong class="text-lg">50</strong>
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</section>
+				<!-- Dashboard Header Section    -->
+				<section class="pb-0">
+					<div class="container-fluid">
+						<div class="row align-items-stretch">
+							<!-- Statistics -->
+							<div class="col-lg-3 col-12">
+								<div class="card mb-3">
+									<div class="card-body">
+										<div class="d-flex align-items-center">
+											<div class="icon flex-shrink-0 bg-red">
+												<i class="fas fa-tasks"></i>
+											</div>
+											<div class="ms-3">
+												<strong class="text-lg d-block lh-1 mb-1">234</strong>
+												<small
+													class="text-uppercase text-gray-500 small d-block lh-1">Applications</small>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="card mb-3">
+									<div class="card-body">
+										<div class="d-flex align-items-center">
+											<div class="icon flex-shrink-0 bg-green">
+												<i class="far fa-calendar"></i>
+											</div>
+											<div class="ms-3">
+												<strong class="text-lg d-block lh-1 mb-1">152</strong>
+												<small
+													class="text-uppercase text-gray-500 small d-block lh-1">Interviews</small>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="card mb-0">
+									<div class="card-body">
+										<div class="d-flex align-items-center">
+											<div class="icon flex-shrink-0 bg-orange">
+												<i class="far fa-paper-plane"></i>
+											</div>
+											<div class="ms-3">
+												<strong class="text-lg d-block lh-1 mb-1">147</strong>
+												<small
+													class="text-uppercase text-gray-500 small d-block lh-1">Forwards</small>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- Line Chart            -->
+							<div class="col-lg-6 col-12">
+								<div class="card mb-0 h-100">
+									<div class="card-body">
+										<canvas id="lineCahrt"></canvas>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-3 col-12">
+								<!-- Bar Chart   -->
+								<div class="card">
+									<div class="card-body">
+										<strong class="h2 mb-0 d-block text-violet">95%</strong>
+										<small class="text-gray-500 small text-uppercase d-block mb-3">Current Server
+											Uptime
+										</small>
+										<canvas id="barChartHome"></canvas>
+									</div>
+								</div>
+								<!-- Numbers-->
+								<div class="card mb-0">
+									<div class="card-body">
+										<div class="d-flex align-items-center">
+											<div class="icon flex-shrink-0 bg-green">
+												<i class="fas fa-chart-area"></i>
+											</div>
+											<div class="ms-3">
+												<strong class="text-lg mb-0 d-block lh-1">99.9%</strong>
+												<small class="text-gray-500 small text-uppercase">Success Rate</small>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- Client Section-->
+				<section class="pb-0">
+					<div class="container-fluid">
+						<div class="row gy-4">
+							<!-- Work Amount  -->
+							<div class="col-lg-4">
+								<div class="card mb-0">
+									<div class="card-close">
+										<div class="dropdown">
+											<button class="dropdown-toggle text-sm" type="button" id="closeCard1"
+												data-bs-toggle="dropdown" aria-expanded="false">
+												<i class="fas fa-ellipsis-v"></i>
+											</button>
+											<div class="dropdown-menu dropdown-menu-end shadow-sm"
+												aria-labelledby="closeCard1">
+												<a class="dropdown-item py-1 px-3 remove" href="#">
+													<i class="fas fa-times"></i>Close</a>
+												<a class="dropdown-item py-1 px-3 edit" href="#">
+													<i class="fas fa-cog"></i>Edit</a>
+											</div>
+										</div>
+									</div>
+									<div class="card-body d-flex flex-column">
+										<h3 class="mb-1">Work Hours</h3>
+										<small class="text-gray-500 d-block mb-0">Lorem ipsum dolor sit amet.</small>
+										<div class="pie-with-centered-text text-center my-5">
+											<canvas class="z-index-20" id="pieChart"></canvas>
+											<div class="text">
+												<strong class="d-block lh-1 text-lg">90</strong>
+												<span class="text-gray-500">Hours</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- Client Profile -->
+							<div class="col-lg-4">
+								<div class="card mb-0">
+									<div class="card-close">
+										<div class="dropdown">
+											<button class="dropdown-toggle text-sm" type="button" id="closeCard1"
+												data-bs-toggle="dropdown" aria-expanded="false">
+												<i class="fas fa-ellipsis-v"></i>
+											</button>
+											<div class="dropdown-menu dropdown-menu-end shadow-sm"
+												aria-labelledby="closeCard1">
+												<a class="dropdown-item py-1 px-3 remove" href="#">
+													<i class="fas fa-times"></i>Close</a>
+												<a class="dropdown-item py-1 px-3 edit" href="#">
+													<i class="fas fa-cog"></i>Edit</a>
+											</div>
+										</div>
+									</div>
+									<div class="card-body text-center">
+										<div class="client-avatar mb-3">
+											<img class="img-fluid rounded-circle shadow-0" src="img/avatar-2.jpg"
+												alt="...">
+											<div class="status bg-green"></div>
+										</div>
+										<h3 class="fw-normal">Jason Doe</h3>
+										<p class="text-sm text-gray-500 mb-1">Web Developer</p>
+										<a class="btn btn-faintGreen btn-sm text-white px-4 rounded-pill py-0"
+											href="#">Follow</a>
+										<div class="row py-4 gy-3">
+											<div class="col-4">
+												<strong class="d-block lh-1">20</strong>
+												<small>Photos</small>
+											</div>
+											<div class="col-4">
+												<strong class="d-block lh-1">54</strong>
+												<small>Videos</small>
+											</div>
+											<div class="col-4">
+												<strong class="d-block lh-1">235</strong>
+												<small>Tasks</small>
+											</div>
+										</div>
+										<div class="d-flex justify-content-between">
+											<a class="text-gray-500 text-sm" href="#" target="_blank">
+												<i class="fab fa-facebook-f"></i>
+											</a>
+											<a class="text-gray-500 text-sm" href="#" target="_blank">
+												<i class="fab fa-twitter"></i>
+											</a>
+											<a class="text-gray-500 text-sm" href="#" target="_blank">
+												<i class="fab fa-google"></i>
+											</a>
+											<a class="text-gray-500 text-sm" href="#" target="_blank">
+												<i class="fab fa-instagram"></i>
+											</a>
+											<a class="text-gray-500 text-sm" href="#" target="_blank">
+												<i class="fab fa-linkedin-in"></i>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- Total Overdue             -->
+							<div class="col-lg-4">
+								<div class="card mb-0">
+									<div class="card-close">
+										<div class="dropdown">
+											<button class="dropdown-toggle text-sm" type="button" id="closeCard1"
+												data-bs-toggle="dropdown" aria-expanded="false">
+												<i class="fas fa-ellipsis-v"></i>
+											</button>
+											<div class="dropdown-menu dropdown-menu-end shadow-sm"
+												aria-labelledby="closeCard1">
+												<a class="dropdown-item py-1 px-3 remove" href="#">
+													<i class="fas fa-times"></i>Close</a>
+												<a class="dropdown-item py-1 px-3 edit" href="#">
+													<i class="fas fa-cog"></i>Edit</a>
+											</div>
+										</div>
+									</div>
+									<div class="card-body d-flex flex-column">
+										<h3>Total Overdue</h3>
+										<p class="small mb-5 text-gray-500">Lorem ipsum dolor sit amet.</p>
+										<p class="text-xl text-center fw-normal">$20,000</p>
+										<div class="chart mt-auto">
+											<canvas id="lineChart1"> </canvas>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+
 				<!-- Page Footer-->
 				<footer class="position-absolute bottom-0 bg-darkBlue text-white text-center py-3 w-100 text-xs"
 					id="footer">
@@ -520,11 +704,14 @@
 			</div>
 		</div>
 	</div>
+
+
 	<!-- JavaScript files-->
 	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 	<script src="vendor/chart.js/Chart.min.js"></script>
 	<script src="vendor/just-validate/js/just-validate.min.js"></script>
 	<script src="vendor/choices.js/public/assets/scripts/choices.min.js"></script>
+	<script src="js/charts-home.js"></script>
 	<!-- Main File-->
 	<script src="js/front.js"></script>
 	<script>
@@ -554,6 +741,15 @@
 	<!-- FontAwesome CSS - loading as last, so it doesn't block rendering-->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
 		integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+	<?php
+} else {
+    ?>
+	<h1>Login Failed</h1>
+
+	<?php
+}
+?>
+
 </body>
 
 </html>

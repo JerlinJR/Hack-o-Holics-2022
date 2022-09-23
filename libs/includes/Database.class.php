@@ -11,7 +11,7 @@ class Database
             $user_name = "root";
             $pass_word = "";
             $dbname = "roadcare";
-     
+        
             // Create connection
             $connection = new mysqli($servername, $user_name, $pass_word, $dbname);
             // Check connection
