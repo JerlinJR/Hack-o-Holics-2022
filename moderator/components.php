@@ -1,6 +1,6 @@
 <?php
-
-?>
+include '../libs/load.php';
+$value = array_values(User::getMaterialData());?>
 
 <!DOCTYPE html>
 <html>
@@ -391,37 +391,33 @@
 												Kg</label>
 											<div class="input-group mb-3">
 												<span class="input-group-text">₹</span>
-												<span class="input-group-text">0.00</span>
 												<input class="form-control" type="text"
 													aria-label="Dollar amount (with dot and two decimal places)"
-													value="50">
+													id="cement">
 											</div>
 
 											<label class="form-label" for="exampleInputPassword1">Mcent Price per
 												Kg</label>
 											<div class="input-group mb-3">
 												<span class="input-group-text">₹</span>
-												<span class="input-group-text">0.00</span>
 												<input class="form-control" type="text"
-													aria-label="Dollar amount (with dot and two decimal places)">
+													aria-label="Dollar amount (with dot and two decimal places)" id="mcent">
 											</div>
 
 											<label class="form-label" for="exampleInputPassword1">Agrigator Price per
 												Kg</label>
 											<div class="input-group mb-3">
 												<span class="input-group-text">₹</span>
-												<span class="input-group-text">0.00</span>
 												<input class="form-control" type="text"
-													aria-label="Dollar amount (with dot and two decimal places)">
+													aria-label="Dollar amount (with dot and two decimal places)" id="agrigator-tor">
 											</div>
 
 											<label class="form-label" for="exampleInputPassword1">Labour Charge per
 												person</label>
 											<div class="input-group mb-3">
 												<span class="input-group-text">₹</span>
-												<span class="input-group-text">0.00</span>
 												<input class="form-control" type="text"
-													aria-label="Dollar amount (with dot and two decimal places)">
+													aria-label="Dollar amount (with dot and two decimal places)" id="labourcharge">
 											</div>
 
 
@@ -459,33 +455,29 @@
 												Price</label>
 											<div class="input-group mb-3">
 												<span class="input-group-text">₹</span>
-												<span class="input-group-text">0.00</span>
 												<input class="form-control" type="text"
-													aria-label="Dollar amount (with dot and two decimal places)">
+													aria-label="Dollar amount (with dot and two decimal places)" id="agrigator">
 											</div>
 
 											<label class="form-label" for="exampleInputPassword1">Bitumin Price</label>
 											<div class="input-group mb-3">
 												<span class="input-group-text">₹</span>
-												<span class="input-group-text">0.00</span>
 												<input class="form-control" type="text"
-													aria-label="Dollar amount (with dot and two decimal places)">
+													aria-label="Dollar amount (with dot and two decimal places)" id="bitumin">
 											</div>
 
 											<label class="form-label" for="exampleInputPassword1">Laying Charge</label>
 											<div class="input-group mb-3">
 												<span class="input-group-text">₹</span>
-												<span class="input-group-text">0.00</span>
 												<input class="form-control" type="text"
-													aria-label="Dollar amount (with dot and two decimal places)">
+													aria-label="Dollar amount (with dot and two decimal places)" id="layingCharge">
 											</div>
 
 											<label class="form-label" for="exampleInputPassword1">Mixing Charge</label>
 											<div class="input-group mb-3">
 												<span class="input-group-text">₹</span>
-												<span class="input-group-text">0.00</span>
 												<input class="form-control" type="text"
-													aria-label="Dollar amount (with dot and two decimal places)">
+													aria-label="Dollar amount (with dot and two decimal places)" id= "mixingCharge" >
 											</div>
 											<div class="row">
 												<div class="col-sm-9 ms-auto">
@@ -505,7 +497,7 @@
 					<div class="container-fluid">
 						<div class="row gy-2">
 							<div class="col-sm-6 text-sm-start">
-								<p class="mb-0">Your company &copy; 2017-2021</p>
+								<p class="mb-0" id="stains>Your company &copy; 2017-2021</p>
 							</div>
 							<div class="col-sm-6 text-sm-end">
 								<p class="mb-0">Design by
@@ -554,6 +546,26 @@
 	<!-- FontAwesome CSS - loading as last, so it doesn't block rendering-->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
 		integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+      <!-- price updater for concerent road  -->
+
+      <script> 
+        var users = <?php echo json_encode($value); ?>;
+        document.getElementById("cement").value = users[0]; 
+        document.getElementById("mcent").value = users[1];
+        document.getElementById("agrigator").value = users[2];
+        document.getElementById("agrigator-tor").value = users[2];
+        document.getElementById("labourcharge").value = users[3];
+        document.getElementById("bitumin").value = users[4];
+        document.getElementById("layingCharge").value = users[5];
+        document.getElementById("mixingCharge").value = users[6];
+        console.log("price printed");
+
+        document.getElementById("stains").innerHTML = "hello"
+
+      </script>
+
+
 </body>
 
 </html>
