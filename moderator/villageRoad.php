@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>XCoders</title>
+    <title>Bootstrap Material Admin by Bootstrapious.com</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="robots" content="all,follow">
@@ -20,6 +20,7 @@
     <!-- Tweaks for older IEs--><!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+    <script src="js/navbar.js" defer> </script>
   </head>
   <body>
     <div class="page">
@@ -132,74 +133,14 @@
       </header>
       <div class="page-content d-flex align-items-stretch"> 
         <!-- Side Navbar -->
-        <nav class="side-navbar z-index-40">
-          <!-- Sidebar Header-->
-          <div class="sidebar-header d-flex align-items-center py-4 px-3"><img class="avatar shadow-0 img-fluid rounded-circle" src="img/avatar-1.jpg" alt="...">
-            <div class="ms-3 title">
-              <h1 class="h4 mb-2">Mark Stephen</h1>
-              <p class="text-sm text-gray-500 fw-light mb-0 lh-1">Web Designer</p>
-            </div>
-          </div>
-          <!-- Sidebar Navidation Menus--><span class="text-uppercase text-gray-400 text-xs letter-spacing-0 mx-3 px-2 heading">Main</span>
-          <ul class="list-unstyled py-4">
-            <li class="sidebar-item"><a class="sidebar-link" href="index.html"> 
-                <svg class="svg-icon svg-icon-sm svg-icon-heavy me-xl-2">
-                  <use xlink:href="#real-estate-1"> </use>
-                </svg>Home </a></li>
-                <li class="sidebar-item"><a class="sidebar-link" href="stateHighway.php"> 
-                <svg class="svg-icon svg-icon-sm svg-icon-heavy me-xl-2">
-                  <use xlink:href="#portfolio-grid-1"> </use>
-                </svg>State Highway </a></li>
-                <li class="sidebar-item"><a class="sidebar-link" href="districtHighway.php"> 
-                  <svg class="svg-icon svg-icon-sm svg-icon-heavy me-xl-2">
-                    <use xlink:href="#portfolio-grid-1"> </use>
-                  </svg>District Highway</a></li>
-                  <li class="sidebar-item"><a class="sidebar-link" href="villageRoad.php"> 
-                    <svg class="svg-icon svg-icon-sm svg-icon-heavy me-xl-2">
-                      <use xlink:href="#portfolio-grid-1"> </use>
-                    </svg>Village Road</a></li>
-            <li class="sidebar-item"><a class="sidebar-link" href="charts.html"> 
-                <svg class="svg-icon svg-icon-sm svg-icon-heavy me-xl-2">
-                  <use xlink:href="#sales-up-1"> </use>
-                </svg>Charts </a></li>
-                <li class="sidebar-item"><a class="sidebar-link" href="components.php"> 
-                  <svg class="svg-icon svg-icon-sm svg-icon-heavy me-xl-2">
-                    <use xlink:href="#survey-1"> </use>
-                  </svg>Components </a></li>
-            <li class="sidebar-item"><a class="sidebar-link" href="#exampledropdownDropdown" data-bs-toggle="collapse"> 
-                <svg class="svg-icon svg-icon-sm svg-icon-heavy me-xl-2">
-                  <use xlink:href="#browser-window-1"> </use>
-                </svg>Example dropdown </a>
-              <ul class="collapse list-unstyled " id="exampledropdownDropdown">
-                <li><a class="sidebar-link" href="#">Page</a></li>
-                <li><a class="sidebar-link" href="#">Page</a></li>
-                <li><a class="sidebar-link" href="#">Page</a></li>
-              </ul>
-            </li>
-            <li class="sidebar-item"><a class="sidebar-link" href="login.html"> 
-                <svg class="svg-icon svg-icon-sm svg-icon-heavy me-xl-2">
-                  <use xlink:href="#disable-1"> </use>
-                </svg>Login page </a></li>
-          </ul><span class="text-uppercase text-gray-400 text-xs letter-spacing-0 mx-3 px-2 heading">Extras</span>
-          <ul class="list-unstyled py-4">
-            <li class="sidebar-item"> <a class="sidebar-link" href="#"> 
-                <svg class="svg-icon svg-icon-sm svg-icon-heavy me-xl-2">
-                  <use xlink:href="#imac-screen-1"> </use>
-                </svg>Demo </a></li>
-            <li class="sidebar-item"> <a class="sidebar-link" href="#"> 
-                <svg class="svg-icon svg-icon-sm svg-icon-heavy me-xl-2">
-                  <use xlink:href="#chart-1"> </use>
-                </svg>Demo </a></li>
-            <li class="sidebar-item"> <a class="sidebar-link" href="#"> 
-                <svg class="svg-icon svg-icon-sm svg-icon-heavy me-xl-2">
-                  <use xlink:href="#quality-1"> </use>
-                </svg>Demo </a></li>
-            <li class="sidebar-item"> <a class="sidebar-link" href="#"> 
-                <svg class="svg-icon svg-icon-sm svg-icon-heavy me-xl-2">
-                  <use xlink:href="#security-shield-1"> </use>
-                </svg>Demo </a></li>
-          </ul>
-        </nav>
+        
+        <div id="template-road"></div>
+
+
+
+
+
+
         <div class="content-inner w-100">
           <!-- Page Header-->
           <header class="bg-white shadow-sm px-4 py-3 z-index-20">
@@ -421,65 +362,7 @@
                     </div>
                   </div>
                 </div> 
-                <div class="col-lg-6">
-                  <div class="card mb-0">
-                    <div class="card-header">
-                      <div class="card-close">
-                        <div class="dropdown">
-                          <button class="dropdown-toggle text-sm" type="button" id="closeCard1" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-v"></i></button>
-                          <div class="dropdown-menu dropdown-menu-end shadow-sm" aria-labelledby="closeCard1"><a class="dropdown-item py-1 px-3 remove" href="#"> <i class="fas fa-times"></i>Close</a><a class="dropdown-item py-1 px-3 edit" href="#"> <i class="fas fa-cog"></i>Edit</a></div>
-                        </div>
-                      </div>
-                      <h3 class="h4 mb-0">village road 5</h3>
-                    </div>
-                    <div class="card-body">
-                      <div class="table-responsive">
-                        <table class="table mb-0 table-striped table-sm">
-                          <thead>
-                            <tr>
-                              <th>#</th>
-                              <th>First Name</th>
-                              <th>Last Name</th>
-                              <th>Username</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <th scope="row">1</th>
-                              <td>Mark</td>
-                              <td>Otto</td>
-                              <td>@mdo</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">2</th>
-                              <td>Jacob</td>
-                              <td>Thornton</td>
-                              <td>@fat</td>
-                            </tr>
-                            <tr>
-                              <th class="border-bottom-0" scope="row">3</th>
-                              <td class="border-bottom-0">Larry</td>
-                              <td class="border-bottom-0">the Bird</td>
-                              <td class="border-bottom-0">@twitter</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">4</th>
-                              <td>Mark</td>
-                              <td>Otto</td>
-                              <td>@mdo</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">5</th>
-                              <td>Jacob</td>
-                              <td>Thornton</td>
-                              <td>@fat</td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
-                  </div>
-                </div> 
+                
 
 
               </div>

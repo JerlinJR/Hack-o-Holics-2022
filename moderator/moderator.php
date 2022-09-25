@@ -64,7 +64,7 @@ if ($result) {
 							<!-- Navbar Brand -->
 							<a class="navbar-brand d-none d-sm-inline-block" href="index.html">
 								<div class="brand-text d-none d-lg-inline-block">
-									<span>Bootstrap </span>
+									<span>Road Care</span>
 									<strong>Dashboard</strong>
 								</div>
 								<div class="brand-text d-none d-sm-inline-block d-lg-none">
