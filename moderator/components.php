@@ -404,13 +404,7 @@ $value = array_values(User::getMaterialData());?>
 													aria-label="Dollar amount (with dot and two decimal places)" id="mcent">
 											</div>
 
-											<label class="form-label" for="exampleInputPassword1">Agrigator Price per
-												Kg</label>
-											<div class="input-group mb-3">
-												<span class="input-group-text">₹</span>
-												<input class="form-control" type="text"
-													aria-label="Dollar amount (with dot and two decimal places)" id="agrigator-tor">
-											</div>
+											
 
 											<label class="form-label" for="exampleInputPassword1">Labour Charge per
 												person</label>
@@ -420,36 +414,6 @@ $value = array_values(User::getMaterialData());?>
 													aria-label="Dollar amount (with dot and two decimal places)" id="labourcharge">
 											</div>
 
-
-											<button class="btn btn-primary" type="submit">Upadte Price</button>
-										</form>
-									</div>
-								</div>
-							</div>
-							<!-- Horizontal Form-->
-							<div class="col-lg-6">
-								<div class="card">
-									<div class="card-header">
-										<div class="card-close">
-											<div class="dropdown">
-												<button class="dropdown-toggle text-sm" type="button" id="closeCard1"
-													data-bs-toggle="dropdown" aria-expanded="false">
-													<i class="fas fa-ellipsis-v"></i>
-												</button>
-												<div class="dropdown-menu dropdown-menu-end shadow-sm"
-													aria-labelledby="closeCard1">
-													<a class="dropdown-item py-1 px-3 remove" href="#">
-														<i class="fas fa-times"></i>Close</a>
-													<a class="dropdown-item py-1 px-3 edit" href="#">
-														<i class="fas fa-cog"></i>Edit</a>
-												</div>
-											</div>
-										</div>
-										<h3 class="h4 mb-0">Tor Road</h3>
-									</div>
-									<div class="card-body">
-										<p class="text-sm">Upadate to the latest price for best estimation</p>
-										<form class="form-horizontal">
 
 											<label class="form-label" for="exampleInputPassword1">Agrigator
 												Price</label>
@@ -479,15 +443,14 @@ $value = array_values(User::getMaterialData());?>
 												<input class="form-control" type="text"
 													aria-label="Dollar amount (with dot and two decimal places)" id= "mixingCharge" >
 											</div>
-											<div class="row">
-												<div class="col-sm-9 ms-auto">
-													<input class="btn btn-primary" type="submit" value="Update Price">
-												</div>
-											</div>
+
+
+											<button class="btn btn-primary" type="submit">Upadte Price</button>
 										</form>
 									</div>
 								</div>
 							</div>
+							
 						</div>
 					</div>
 				</section>
@@ -553,9 +516,8 @@ $value = array_values(User::getMaterialData());?>
         var users = <?php echo json_encode($value); ?>;
         document.getElementById("cement").value = users[0]; 
         document.getElementById("mcent").value = users[1];
-        document.getElementById("agrigator").value = users[2];
-        document.getElementById("agrigator-tor").value = users[2];
         document.getElementById("labourcharge").value = users[3];
+		document.getElementById("agrigator").value = users[2];
         document.getElementById("bitumin").value = users[4];
         document.getElementById("layingCharge").value = users[5];
         document.getElementById("mixingCharge").value = users[6];
