@@ -2,10 +2,10 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Sep 25, 2022 at 04:12 PM
+-- Host: localhost
+-- Generation Time: Sep 25, 2022 at 06:58 PM
 -- Server version: 10.4.24-MariaDB
--- PHP Version: 8.1.6
+-- PHP Version: 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `roadcare`
+-- Database: `RoadCare`
 --
 
 -- --------------------------------------------------------
@@ -72,6 +72,7 @@ INSERT INTO `districtroads` (`roadName`, `roadLengthInKM`, `roadWidth`) VALUES
 --
 
 CREATE TABLE `materialprice` (
+  `id` int(11) NOT NULL,
   `cement` int(11) NOT NULL,
   `mcent` int(11) NOT NULL,
   `agrigator` int(11) NOT NULL,
@@ -85,8 +86,8 @@ CREATE TABLE `materialprice` (
 -- Dumping data for table `materialprice`
 --
 
-INSERT INTO `materialprice` (`cement`, `mcent`, `agrigator`, `labourcharge`, `bitumin`, `laying`, `mixing`) VALUES
-(10, 5000, 5000, 800, 5000, 5000, 800);
+INSERT INTO `materialprice` (`id`, `cement`, `mcent`, `agrigator`, `labourcharge`, `bitumin`, `laying`, `mixing`) VALUES
+(1, 3, 3, 3, 3, 3, 3, 3);
 
 -- --------------------------------------------------------
 
@@ -167,6 +168,12 @@ ALTER TABLE `clientauth`
   ADD UNIQUE KEY `username` (`username`);
 
 --
+-- Indexes for table `materialprice`
+--
+ALTER TABLE `materialprice`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `moderatorlogin`
 --
 ALTER TABLE `moderatorlogin`
@@ -180,6 +187,12 @@ ALTER TABLE `moderatorlogin`
 -- AUTO_INCREMENT for table `clientauth`
 --
 ALTER TABLE `clientauth`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `materialprice`
+--
+ALTER TABLE `materialprice`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
