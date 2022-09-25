@@ -10,7 +10,7 @@ class Database
             $servername = "localhost";
             $user_name = "root";
             $pass_word = "";
-            $dbname = "roadcare";
+            $dbname = "RoadCare";
         
             // Create connection
             $connection = new mysqli($servername, $user_name, $pass_word, $dbname);
