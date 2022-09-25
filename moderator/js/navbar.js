@@ -11,27 +11,27 @@ template.innerHTML = `
   </div>
   <!-- Sidebar Navidation Menus--><span class="text-uppercase text-gray-400 text-xs letter-spacing-0 mx-3 px-2 heading">Main</span>
   <ul class="list-unstyled py-4">
-    <li class="sidebar-item"><a class="sidebar-link" href="index.html"> 
+    <li class="sidebar-item"><a class="sidebar-link" href="moderator.php" > 
         <svg class="svg-icon svg-icon-sm svg-icon-heavy me-xl-2">
           <use xlink:href="#real-estate-1"> </use>
         </svg>Home </a></li>
-        <li class="sidebar-item"><a class="sidebar-link" href="stateHighway.php"> 
+        <li class="sidebar-item"><a class="sidebar-link" href="stateHighway.php" target="_blank"> 
         <svg class="svg-icon svg-icon-sm svg-icon-heavy me-xl-2">
           <use xlink:href="#portfolio-grid-1"> </use>
         </svg>State Highway </a></li>
-        <li class="sidebar-item"><a class="sidebar-link" href="districtHighway.php"> 
+        <li class="sidebar-item"><a class="sidebar-link" href="districtHighway.php" target="_blank"> 
           <svg class="svg-icon svg-icon-sm svg-icon-heavy me-xl-2">
             <use xlink:href="#portfolio-grid-1"> </use>
           </svg>District Highway</a></li>
-          <li class="sidebar-item"><a class="sidebar-link" href="villageRoad.php"> 
+          <li class="sidebar-item"><a class="sidebar-link" href="villageRoad.php" target="_blank"> 
             <svg class="svg-icon svg-icon-sm svg-icon-heavy me-xl-2">
               <use xlink:href="#portfolio-grid-1"> </use>
             </svg>Village Road</a></li>
-    <li class="sidebar-item"><a class="sidebar-link" href="charts.html"> 
+    <li class="sidebar-item"><a class="sidebar-link" href="charts.html" target="_blank"> 
         <svg class="svg-icon svg-icon-sm svg-icon-heavy me-xl-2">
           <use xlink:href="#sales-up-1"> </use>
         </svg>Charts </a></li>
-        <li class="sidebar-item"><a class="sidebar-link" href="components.php"> 
+        <li class="sidebar-item"><a class="sidebar-link" href="components.php" target="_blank"> 
           <svg class="svg-icon svg-icon-sm svg-icon-heavy me-xl-2">
             <use xlink:href="#survey-1"> </use>
           </svg>Components </a></li>
@@ -49,24 +49,6 @@ template.innerHTML = `
         <svg class="svg-icon svg-icon-sm svg-icon-heavy me-xl-2">
           <use xlink:href="#disable-1"> </use>
         </svg>Login page </a></li>
-  </ul><span class="text-uppercase text-gray-400 text-xs letter-spacing-0 mx-3 px-2 heading">Extras</span>
-  <ul class="list-unstyled py-4">
-    <li class="sidebar-item"> <a class="sidebar-link" href="#"> 
-        <svg class="svg-icon svg-icon-sm svg-icon-heavy me-xl-2">
-          <use xlink:href="#imac-screen-1"> </use>
-        </svg>Demo </a></li>
-    <li class="sidebar-item"> <a class="sidebar-link" href="#"> 
-        <svg class="svg-icon svg-icon-sm svg-icon-heavy me-xl-2">
-          <use xlink:href="#chart-1"> </use>
-        </svg>Demo </a></li>
-    <li class="sidebar-item"> <a class="sidebar-link" href="#"> 
-        <svg class="svg-icon svg-icon-sm svg-icon-heavy me-xl-2">
-          <use xlink:href="#quality-1"> </use>
-        </svg>Demo </a></li>
-    <li class="sidebar-item"> <a class="sidebar-link" href="#"> 
-        <svg class="svg-icon svg-icon-sm svg-icon-heavy me-xl-2">
-          <use xlink:href="#security-shield-1"> </use>
-        </svg>Demo </a></li>
   </ul>
 </nav>`
 document.body.appendChild(template.content);
