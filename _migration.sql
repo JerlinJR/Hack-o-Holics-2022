@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 23, 2022 at 05:19 PM
+-- Generation Time: Sep 25, 2022 at 04:12 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -95,6 +95,7 @@ INSERT INTO `materialprice` (`cement`, `mcent`, `agrigator`, `labourcharge`, `bi
 --
 
 CREATE TABLE `moderatorlogin` (
+  `moderatorUsername` varchar(30) NOT NULL,
   `moderatorId` int(255) NOT NULL,
   `password` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -103,8 +104,8 @@ CREATE TABLE `moderatorlogin` (
 -- Dumping data for table `moderatorlogin`
 --
 
-INSERT INTO `moderatorlogin` (`moderatorId`, `password`) VALUES
-(100, '100');
+INSERT INTO `moderatorlogin` (`moderatorUsername`, `moderatorId`, `password`) VALUES
+('admin', 100, '100');
 
 -- --------------------------------------------------------
 

@@ -25,7 +25,7 @@ class User
     {
         $conn = Database::getConnection();
 
-        $sql = "SELECT * FROM `moderatorLogin` WHERE `moderatorid` = '$user' ";
+        $sql = "SELECT * FROM `moderatorlogin` WHERE `moderatorid` = '$user' ";
         $result = $conn->query($sql);
         if ($result->num_rows == 1) {
             $row = $result->fetch_assoc();

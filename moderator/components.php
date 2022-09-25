@@ -8,7 +8,7 @@ $value = array_values(User::getMaterialData());?>
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Bootstrap Material Admin by Bootstrapious.com</title>
+	<title>XCoders</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="robots" content="all,follow">
