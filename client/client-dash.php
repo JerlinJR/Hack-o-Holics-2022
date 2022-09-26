@@ -2,11 +2,14 @@
 
 include '../libs/load.php';
 
-$username = $_POST['username'];
-$password = $_POST['password'];
+print_r($_POST);
 
-$result = User::login($username, $password);
+// if (!empty(isset($_POST['id'])) and !empty(isset($_POST['password']))) {
+//     $id = $_POST['id'];
+//     $password = $_POST['password'];
 
+//     $result = true;
+// }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,14 +27,13 @@ $result = User::login($username, $password);
 
 <body>
 
-
-	<?php
-if ($result) {
-    ?>
 	<div class="c-dash">
 		<div style="text-align:center" class="road-type">
 			<h2 id="heading-text">Select the type of Road</h2>
-			<form method="post" action="roadData.php">
+			<form method="post" action="client-dash.php">
+				<input type="text" name="id" id="id" placeholder="Your ID" required />
+				<br>
+
 				<select name="roads" id="roads" required>
 					<option value="">None</option>
 					<option value="stateHighway">State Highway</option>
@@ -42,11 +44,11 @@ if ($result) {
 				<!-- state highway -->
 
 				<div id="stateHighway">
-					<select id="exp" name="exp">
-						<option value="1">SH1</option>
-						<option value="2">SH2</option>
-						<option value="3">SH3</option>
-						<option value="4">SH4</option>
+					<select id="exp" name="stateHighwayRoads">
+						<option value="SH1">SH1</option>
+						<option value="SH2">SH2</option>
+						<option value="SH3">SH3</option>
+						<option value="SH4">SH4</option>
 					</select>
 				</div>
 
@@ -54,13 +56,13 @@ if ($result) {
 				<!-- District -->
 
 				<div id="district">
-					<select id="team" name="team">
-						<option value="1">DR1</option>
-						<option value="2">DR</option>
-						<option value="3">DR3</option>
-						<option value="4">DR4</option>
-						<option value="5">DR5</option>
-						<option value="6">DR6</option>
+					<select id="team" name="districtRoads">
+						<option value="DR1">DR1</option>
+						<option value="DR2">DR2</option>
+						<option value="DR3">DR3</option>
+						<option value="DR4">DR4</option>
+						<option value="DR5">DR5</option>
+						<option value="DR6">DR6</option>
 					</select>
 				</div>
 
@@ -68,11 +70,11 @@ if ($result) {
 				<!-- Village Road -->
 
 				<div id="villageRoad">
-					<select id="age" name="age">
-						<option value="1">VR1</option>
-						<option value="2">VR2</option>
-						<option value="3">VR3</option>
-						<option value="4">VR4</option>
+					<select id="age" name="villageRoad">
+						<option value="VR1">VR1</option>
+						<option value="VR2">VR2</option>
+						<option value="VR3">VR3</option>
+						<option value="VR4">VR4</option>
 					</select>
 				</div>
 
@@ -83,18 +85,12 @@ if ($result) {
 			</form>
 		</div>
 	</div>
-	<?php
-} else {
-    ?>
-
-	<h1>Login Failed</h1>
-
-	<?php
-}
-?>
 
 
 </body>
 <script src="script.js"></script>
 
 </html>
+
+<!-- Array ( [id] => 1 [roads] => stateHighway [exp] => 1 [team] => 1 [age] => 1 [damageDepth] => 2 )
+ -->
