@@ -45,7 +45,12 @@ print_r($_POST);
 				<!-- state highway -->
 
 				<div id="stateHighway">
+<<<<<<< HEAD
 					<select class="allRoad" id="exp" name="stateHighwayRoads">
+=======
+					<select id="exp" name="stateHighwayRoads">
+						<option selected="true" disabled="disabled">Choose Tagging</option>
+>>>>>>> 30450f5d27c6745cb831ce16feb2426d020845bd
 						<option value="SH1">SH1</option>
 						<option value="SH2">SH2</option>
 						<option value="SH3">SH3</option>
@@ -57,7 +62,12 @@ print_r($_POST);
 				<!-- District -->
 
 				<div id="district">
+<<<<<<< HEAD
 					<select class="allRoad" id="team" name="districtRoads">
+=======
+					<select id="team" name="districtRoads">
+						<option selected="true" disabled="disabled">Choose Tagging</option>
+>>>>>>> 30450f5d27c6745cb831ce16feb2426d020845bd
 						<option value="DR1">DR1</option>
 						<option value="DR2">DR2</option>
 						<option value="DR3">DR3</option>
@@ -71,7 +81,12 @@ print_r($_POST);
 				<!-- Village Road -->
 
 				<div id="villageRoad">
+<<<<<<< HEAD
 					<select class="allRoad" id="age" name="villageRoad">
+=======
+					<select id="age" name="villageRoad">
+						<option selected="true" disabled="disabled">Choose Tagging</option>
+>>>>>>> 30450f5d27c6745cb831ce16feb2426d020845bd
 						<option value="VR1">VR1</option>
 						<option value="VR2">VR2</option>
 						<option value="VR3">VR3</option>
