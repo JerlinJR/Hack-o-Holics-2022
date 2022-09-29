@@ -45,6 +45,7 @@ print_r($_POST);
 
 				<div id="stateHighway">
 					<select id="exp" name="stateHighwayRoads">
+						<option selected="true" disabled="disabled">Choose Tagging</option>
 						<option value="SH1">SH1</option>
 						<option value="SH2">SH2</option>
 						<option value="SH3">SH3</option>
@@ -57,6 +58,7 @@ print_r($_POST);
 
 				<div id="district">
 					<select id="team" name="districtRoads">
+						<option selected="true" disabled="disabled">Choose Tagging</option>
 						<option value="DR1">DR1</option>
 						<option value="DR2">DR2</option>
 						<option value="DR3">DR3</option>
@@ -71,6 +73,7 @@ print_r($_POST);
 
 				<div id="villageRoad">
 					<select id="age" name="villageRoad">
+						<option selected="true" disabled="disabled">Choose Tagging</option>
 						<option value="VR1">VR1</option>
 						<option value="VR2">VR2</option>
 						<option value="VR3">VR3</option>
