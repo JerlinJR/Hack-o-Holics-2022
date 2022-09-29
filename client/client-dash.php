@@ -23,6 +23,7 @@ print_r($_POST);
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="script.js"></script>
 </head>
 
 <body>
@@ -44,7 +45,7 @@ print_r($_POST);
 				<!-- state highway -->
 
 				<div id="stateHighway">
-					<select id="exp" name="stateHighwayRoads">
+					<select class="allRoad" id="exp" name="stateHighwayRoads">
 						<option value="SH1">SH1</option>
 						<option value="SH2">SH2</option>
 						<option value="SH3">SH3</option>
@@ -56,7 +57,7 @@ print_r($_POST);
 				<!-- District -->
 
 				<div id="district">
-					<select id="team" name="districtRoads">
+					<select class="allRoad" id="team" name="districtRoads">
 						<option value="DR1">DR1</option>
 						<option value="DR2">DR2</option>
 						<option value="DR3">DR3</option>
@@ -70,7 +71,7 @@ print_r($_POST);
 				<!-- Village Road -->
 
 				<div id="villageRoad">
-					<select id="age" name="villageRoad">
+					<select class="allRoad" id="age" name="villageRoad">
 						<option value="VR1">VR1</option>
 						<option value="VR2">VR2</option>
 						<option value="VR3">VR3</option>
@@ -88,7 +89,7 @@ print_r($_POST);
 
 
 </body>
-<script src="script.js"></script>
+
 
 </html>
 
