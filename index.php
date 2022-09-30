@@ -21,7 +21,7 @@
 	<br>
 	<a href="client/roads.html">roads.html</a>
 	<br>
-	<a href="moderator/moderator.php">moderator</a>
+	<a href="moderator_login.php">Moderator Login</a>
 	<br>
 
 </body>

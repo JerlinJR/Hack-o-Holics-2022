@@ -2,18 +2,19 @@
 
 include "../libs/load.php";
 
-if(!empty(isset($_POST['cement'])) and !empty(isset($_POST['mcent'])) and !empty(isset($_POST['agrigator'])) and !empty(isset($_POST['labourcharge'])) and !empty(isset($_POST['bitumin'])) and !empty(isset($_POST['layingCharge'])) and !empty(isset($_POST['mixingCharge']))){
-
+if (!empty(isset($_POST['cement'])) and !empty(isset($_POST['mcent'])) and !empty(isset($_POST['agrigator'])) and !empty(isset($_POST['labourcharge']))) {
     $cement = $_POST['cement'];
     $mcent = $_POST['mcent'];
     $agrigator = $_POST['agrigator'];
     $labourcharge = $_POST['labourcharge'];
-    $bitumin = $_POST['bitumin'];
-    $layingCharge = $_POST['layingCharge'];
-    $mixingCharge = $_POST['mixingCharge'];
+    echo $cement;
+    echo $mcent;
+    echo $agrigator;
+    echo $labourcharge;
 
-    $result = User::priceUpdate($cement,$mcent,$agrigator,$labourcharge,$bitumin,$layingCharge,$mixingCharge);
-    if($result){
+
+    $result = User::priceUpdate($cement, $mcent, $agrigator, $labourcharge);
+    if ($result) {
         echo "DOne";
     }
 } else {
@@ -21,4 +22,4 @@ if(!empty(isset($_POST['cement'])) and !empty(isset($_POST['mcent'])) and !empty
 }
 
 ?>
-    <a href="components.php">Back</a>
+<a href="components.php">Back</a>
