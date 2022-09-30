@@ -1,64 +1,6 @@
 <?php
 
+include 'libs/load.php';
 
-
-
-
-
-
-
-    ini_set('display_errors', 1);
-
-
-
-
-
-
-
-    include "libs/load.php";
-
-
-
-
-
-
-
-
-    // if (Database::getConnection()) {
-    //     echo "Done";
-
-
-
-
-
-
-
-    // } else {
-    //     echo "something wrong";
-
-
-
-
-
-
-
-    // }
-
-    
-
-
-
-
-
-
-
-    // print(User::login("user", "user"));
-
-
-
-
-
-
-
-
-    print_r(User::getMaterialData());
+// print(User::userLogin('user', 'user'));
+print(User::roadUpdate('1', 'districtroat', 'DH1', '3'));
