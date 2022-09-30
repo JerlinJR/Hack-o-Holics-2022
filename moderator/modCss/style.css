@@ -1,25 +1,67 @@
-body {
-    background-image: url("/moderator/img/signin.jpg");
-  }
+
+.moderator{
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+}
 
 .mod-card{
-position: absolute;
-width: 546px;
-height: 425px;
-left: 447px;
-top: 164px;
+margin-top:170px;
+padding:50px;
+width: 320px;
+height: 300px;
 background: #FFFFFF;
 box-shadow: 0px 4px 5px 5px rgba(0, 0, 0, 0.25);
-border-radius: 50px;
+border-radius: 20px;
+}
+
+.main-text{
+    color: #6D335B;
+    font-family: 'Poppins', sans-serif;
+    font-size:30px;
+    margin-bottom:10px;
+
+}
+
+.username{
+    font-size: 20px;
+    font-family:'Poppins', sans-serif;
+    font-weight:400px;
+    margin-bottom: -18px;
+}
+
+.password{
+    font-size: 20px;
+    font-family:'Poppins', sans-serif;
+    font-weight:400px;
+    
+
 }
 
 .signin-in{
     box-sizing: border-box;
-    
-    width: 455px;
-    height: 58px;
-    margin:10px;
+    width: 300px;
+    height: 40px;
     background: #FFFFFF;
     border: 2px solid rgba(199, 193, 193, 0.36);
     border-radius: 10px;
+    margin-bottom: 10px;
+    margin-top:5px;
+}
+
+.submit-button{
+    margin-top:5px;
+    background: #F2D4F5;
+    border-radius:10px;
+    width:120px;
+    height:35px;
+    border:0px;
+    font-family:'Poppins', sans-serif;;
+    font-size:15px;
+    color:#6D335B;
+}
+
+.submit-button:hover{
+    cursor: pointer;
 }

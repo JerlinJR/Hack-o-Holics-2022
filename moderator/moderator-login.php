@@ -6,16 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Road Care</title>
     <link rel="stylesheet" type="text/css" href="modCss/style.css" >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
 </head>
-<body>
+<body style="background-image:url(signin.jpg); background-size: cover; repeat:no-repeat;">
    <div class="moderator">
     <div class="mod-card">
-        <h3>Moderator Signin</h3>
-        <form methos="post">
-            <label>Username</label><br>
+        <h3 class="main-text">Moderator Login</h3>
+        <form method="post">
+            <p class="username">Username</p><br>
             <input class = "signin-in" type="text" /><br>
-            <label>Password</label><br>
-            <input class = "signin-in" type="password">
+            <label class="password">Password</label><br>
+            <input class = "signin-in" type="password"><br>
+            <input type="submit" class="submit-button">
         </form>
 
     </div>
