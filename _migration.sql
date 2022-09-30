@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Sep 30, 2022 at 12:19 PM
+-- Generation Time: Sep 30, 2022 at 08:26 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -42,7 +42,7 @@ CREATE TABLE `clientauth` (
 --
 
 INSERT INTO `clientauth` (`id`, `username`, `email`, `password`, `roadType`, `roadName`, `depth`) VALUES
-(1, 'user', 'user@example.com', 'user', 'district', 'DR6', 200),
+(1, 'user', 'user@example.com', 'user', 'stateHighway', 'SH2', 2),
 (2, 'user2', 'user2@example.com', 'user2', 'villageRoad', 'VR1', 1);
 
 -- --------------------------------------------------------
@@ -53,9 +53,9 @@ INSERT INTO `clientauth` (`id`, `username`, `email`, `password`, `roadType`, `ro
 
 CREATE TABLE `districtroads` (
   `roadName` varchar(50) NOT NULL,
-  `roadLengthInMeter` float NOT NULL,
+  `roadLength` float NOT NULL,
   `roadWidth` float NOT NULL DEFAULT 12,
-  `subBaseDepthInMeter` float NOT NULL,
+  `subBaseDepth` float NOT NULL,
   `baseDepth` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -63,7 +63,7 @@ CREATE TABLE `districtroads` (
 -- Dumping data for table `districtroads`
 --
 
-INSERT INTO `districtroads` (`roadName`, `roadLengthInMeter`, `roadWidth`, `subBaseDepthInMeter`, `baseDepth`) VALUES
+INSERT INTO `districtroads` (`roadName`, `roadLength`, `roadWidth`, `subBaseDepth`, `baseDepth`) VALUES
 ('district road 1', 50000, 12, 0.225, 0.1524),
 ('district road 2', 60000, 12, 0.225, 0.1524),
 ('district road 3', 40000, 12, 0.225, 0.1524);
@@ -87,7 +87,7 @@ CREATE TABLE `materialprice` (
 --
 
 INSERT INTO `materialprice` (`id`, `subBaselabourCost`, `subBaseMaterialPrice`, `baseMaterialPrice`, `baseLabourCost`) VALUES
-(1, 43298, 324, 234, 234);
+(1, 3, 3, 3, 2);
 
 -- --------------------------------------------------------
 
@@ -115,10 +115,10 @@ INSERT INTO `moderatorlogin` (`moderatorUsername`, `moderatorId`, `password`) VA
 --
 
 CREATE TABLE `statehighway` (
-  `stateRoad` varchar(30) NOT NULL,
-  `lengthInMeter` float NOT NULL,
-  `roadWidthInMeter` float NOT NULL DEFAULT 12,
-  `subBaseDepthInMeter` float NOT NULL,
+  `roadName` varchar(30) NOT NULL,
+  `roadLength` float NOT NULL,
+  `roadWidth` float NOT NULL DEFAULT 12,
+  `subBaseDepth` float NOT NULL,
   `baseDepth` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -126,7 +126,7 @@ CREATE TABLE `statehighway` (
 -- Dumping data for table `statehighway`
 --
 
-INSERT INTO `statehighway` (`stateRoad`, `lengthInMeter`, `roadWidthInMeter`, `subBaseDepthInMeter`, `baseDepth`) VALUES
+INSERT INTO `statehighway` (`roadName`, `roadLength`, `roadWidth`, `subBaseDepth`, `baseDepth`) VALUES
 ('state road 1', 50000, 0.225, 0.225, 0.1524),
 ('state road 2', 70000, 0.225, 0.225, 0.1524),
 ('state road 1', 50000, 0.225, 0.225, 0.1524),
@@ -140,9 +140,9 @@ INSERT INTO `statehighway` (`stateRoad`, `lengthInMeter`, `roadWidthInMeter`, `s
 
 CREATE TABLE `villageroads` (
   `roadName` varchar(255) NOT NULL,
-  `roadLengthInMeter` float NOT NULL,
+  `roadLength` float NOT NULL,
   `roadWidth` float NOT NULL DEFAULT 3.75,
-  `subBaseDepthInMeter` float NOT NULL,
+  `subBaseDepth` float NOT NULL,
   `baseDepth` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -150,7 +150,7 @@ CREATE TABLE `villageroads` (
 -- Dumping data for table `villageroads`
 --
 
-INSERT INTO `villageroads` (`roadName`, `roadLengthInMeter`, `roadWidth`, `subBaseDepthInMeter`, `baseDepth`) VALUES
+INSERT INTO `villageroads` (`roadName`, `roadLength`, `roadWidth`, `subBaseDepth`, `baseDepth`) VALUES
 ('village road 1', 2000, 3.75, 0.2, 0.1016),
 ('village road 2', 3000, 3.75, 0.2, 0.1016),
 ('village road 3', 1000, 3.75, 0.2, 0.1016);
