@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Sep 30, 2022 at 12:16 PM
+-- Generation Time: Sep 30, 2022 at 12:19 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -20,6 +20,53 @@ SET time_zone = "+00:00";
 --
 -- Database: `RoadCare`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `clientauth`
+--
+
+CREATE TABLE `clientauth` (
+  `id` int(11) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `email` varchar(30) NOT NULL,
+  `password` varchar(30) NOT NULL,
+  `roadType` varchar(50) NOT NULL,
+  `roadName` varchar(50) NOT NULL,
+  `depth` int(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `clientauth`
+--
+
+INSERT INTO `clientauth` (`id`, `username`, `email`, `password`, `roadType`, `roadName`, `depth`) VALUES
+(1, 'user', 'user@example.com', 'user', 'district', 'DR6', 200),
+(2, 'user2', 'user2@example.com', 'user2', 'villageRoad', 'VR1', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `districtroads`
+--
+
+CREATE TABLE `districtroads` (
+  `roadName` varchar(50) NOT NULL,
+  `roadLengthInMeter` float NOT NULL,
+  `roadWidth` float NOT NULL DEFAULT 12,
+  `subBaseDepthInMeter` float NOT NULL,
+  `baseDepth` float NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `districtroads`
+--
+
+INSERT INTO `districtroads` (`roadName`, `roadLengthInMeter`, `roadWidth`, `subBaseDepthInMeter`, `baseDepth`) VALUES
+('district road 1', 50000, 12, 0.225, 0.1524),
+('district road 2', 60000, 12, 0.225, 0.1524),
+('district road 3', 40000, 12, 0.225, 0.1524);
 
 -- --------------------------------------------------------
 
@@ -42,9 +89,83 @@ CREATE TABLE `materialprice` (
 INSERT INTO `materialprice` (`id`, `subBaselabourCost`, `subBaseMaterialPrice`, `baseMaterialPrice`, `baseLabourCost`) VALUES
 (1, 43298, 324, 234, 234);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `moderatorlogin`
+--
+
+CREATE TABLE `moderatorlogin` (
+  `moderatorUsername` varchar(30) NOT NULL,
+  `moderatorId` int(255) NOT NULL,
+  `password` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `moderatorlogin`
+--
+
+INSERT INTO `moderatorlogin` (`moderatorUsername`, `moderatorId`, `password`) VALUES
+('admin', 100, '100');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `statehighway`
+--
+
+CREATE TABLE `statehighway` (
+  `stateRoad` varchar(30) NOT NULL,
+  `lengthInMeter` float NOT NULL,
+  `roadWidthInMeter` float NOT NULL DEFAULT 12,
+  `subBaseDepthInMeter` float NOT NULL,
+  `baseDepth` float NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `statehighway`
+--
+
+INSERT INTO `statehighway` (`stateRoad`, `lengthInMeter`, `roadWidthInMeter`, `subBaseDepthInMeter`, `baseDepth`) VALUES
+('state road 1', 50000, 0.225, 0.225, 0.1524),
+('state road 2', 70000, 0.225, 0.225, 0.1524),
+('state road 1', 50000, 0.225, 0.225, 0.1524),
+('state road 3', 90000, 0.225, 0.225, 0.1524);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `villageroads`
+--
+
+CREATE TABLE `villageroads` (
+  `roadName` varchar(255) NOT NULL,
+  `roadLengthInMeter` float NOT NULL,
+  `roadWidth` float NOT NULL DEFAULT 3.75,
+  `subBaseDepthInMeter` float NOT NULL,
+  `baseDepth` float NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `villageroads`
+--
+
+INSERT INTO `villageroads` (`roadName`, `roadLengthInMeter`, `roadWidth`, `subBaseDepthInMeter`, `baseDepth`) VALUES
+('village road 1', 2000, 3.75, 0.2, 0.1016),
+('village road 2', 3000, 3.75, 0.2, 0.1016),
+('village road 3', 1000, 3.75, 0.2, 0.1016);
+
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `clientauth`
+--
+ALTER TABLE `clientauth`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `email` (`email`),
+  ADD UNIQUE KEY `username` (`username`);
 
 --
 -- Indexes for table `materialprice`
@@ -53,8 +174,20 @@ ALTER TABLE `materialprice`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `moderatorlogin`
+--
+ALTER TABLE `moderatorlogin`
+  ADD PRIMARY KEY (`moderatorId`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `clientauth`
+--
+ALTER TABLE `clientauth`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `materialprice`
