@@ -429,7 +429,6 @@ print_r($value[2]);
         document.getElementById(" bitumin ").value = users[4];
         document.getElementById(" layingCharge ").value = users[5];
         document.getElementById(" mixingCharge ").value = users[6];
-
       </script> -->
 
 
