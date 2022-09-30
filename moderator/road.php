@@ -1,3 +1,7 @@
+<?php 
+include '../libs/load.php';
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -43,7 +47,7 @@
               <!-- Navbar Header-->
               <div class="navbar-header">
                 <!-- Navbar Brand --><a class="navbar-brand d-none d-sm-inline-block" href="index.html">
-                  <div class="brand-text d-none d-lg-inline-block"><span>Bootstrap </span><strong>Dashboard</strong></div>
+                  <div class="brand-text d-none d-lg-inline-block"><span>Road</span><strong>Care</strong></div>
                   <div class="brand-text d-none d-sm-inline-block d-lg-none"><strong>BD</strong></div></a>
                 <!-- Toggle Button--><a class="menu-btn active" id="toggle-btn" href="#"><span></span><span></span><span></span></a>
               </div>
@@ -141,7 +145,7 @@
           <!-- Page Header-->
           <header class="bg-white shadow-sm px-4 py-3 z-index-20">
             <div class="container-fluid px-0">
-              <h2 class="mb-0 p-1">State Highway</h2>
+              <h2 class="mb-0 p-1">Roads</h2>
             </div>
           </header>
           <!-- Breadcrumb-->
@@ -150,7 +154,7 @@
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb mb-0 py-3">
                   <li class="breadcrumb-item"><a class="fw-light" href="index.html">Home</a></li>
-                  <li class="breadcrumb-item active fw-light" aria-current="page">State Highway</li>
+                  <li class="breadcrumb-item active fw-light" aria-current="page">Roads</li>
                 </ol>
               </nav>
             </div>
@@ -162,46 +166,11 @@
                   <div class="card mb-0">
                     <div class="card-header">
                       <div class="card-close">
-                        <div class="dropdown">
-                          <button class="dropdown-toggle text-sm" type="button" id="closeCard1" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-v"></i></button>
-                          <div class="dropdown-menu dropdown-menu-end shadow-sm" aria-labelledby="closeCard1"><a class="dropdown-item py-1 px-3 remove" href="#"> <i class="fas fa-times"></i>Close</a><a class="dropdown-item py-1 px-3 edit" href="#"> <i class="fas fa-cog"></i>Edit</a></div>
-                        </div>
                       </div>
-                      <h3 class="h4 mb-0">State Highway</h3>
+                      <h3 class="h4 mb-0">Roads</h3>
                     </div>
                     <div class="card-body">
-                      <div class="table-responsive">
-                        <table class="table mb-0">
-                          <thead>
-                            <tr>
-                              <th>#</th>
-                              <th>First Name</th>
-                              <th>Last Name</th>
-                              <th>Username</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <th scope="row">1</th>
-                              <td>Mark</td>
-                              <td>Otto</td>
-                              <td>@mdo</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">2</th>
-                              <td>Jacob</td>
-                              <td>Thornton</td>
-                              <td>@fat</td>
-                            </tr>
-                            <tr>
-                              <th class="border-bottom-0" scope="row">3</th>
-                              <td class="border-bottom-0">Larry</td>
-                              <td class="border-bottom-0">the Bird</td>
-                              <td class="border-bottom-0">@twitter</td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
+                     <?php User::getStateHighway(); ?>
                     </div>
                   </div>
                 </div>
@@ -209,46 +178,12 @@
                   <div class="card mb-0">
                     <div class="card-header">
                       <div class="card-close">
-                        <div class="dropdown">
-                          <button class="dropdown-toggle text-sm" type="button" id="closeCard1" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-v"></i></button>
-                          <div class="dropdown-menu dropdown-menu-end shadow-sm" aria-labelledby="closeCard1"><a class="dropdown-item py-1 px-3 remove" href="#"> <i class="fas fa-times"></i>Close</a><a class="dropdown-item py-1 px-3 edit" href="#"> <i class="fas fa-cog"></i>Edit</a></div>
-                        </div>
                       </div>
-                      <h3 class="h4 mb-0">Road Highway</h3>
+                      <h3 class="h4 mb-0">District Highway</h3>
                     </div>
                     <div class="card-body">
-                      <div class="table-responsive">
-                        <table class="table mb-0 table-striped">
-                          <thead>
-                            <tr>
-                              <th>#</th>
-                              <th>First Name</th>
-                              <th>Last Name</th>
-                              <th>Username</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <th scope="row">1</th>
-                              <td>Mark</td>
-                              <td>Otto</td>
-                              <td>@mdo</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">2</th>
-                              <td>Jacob</td>
-                              <td>Thornton</td>
-                              <td>@fat</td>
-                            </tr>
-                            <tr>
-                              <th class="border-bottom-0" scope="row">3</th>
-                              <td class="border-bottom-0">Larry</td>
-                              <td class="border-bottom-0">the Bird</td>
-                              <td class="border-bottom-0">@twitter</td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
+                      <?php User::getDistrictRoads(); ?>
+                      
                     </div>
                   </div>
                 </div>
@@ -256,54 +191,16 @@
                   <div class="card mb-0">
                     <div class="card-header">
                       <div class="card-close">
-                        <div class="dropdown">
-                          <button class="dropdown-toggle text-sm" type="button" id="closeCard1" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-v"></i></button>
-                          <div class="dropdown-menu dropdown-menu-end shadow-sm" aria-labelledby="closeCard1"><a class="dropdown-item py-1 px-3 remove" href="#"> <i class="fas fa-times"></i>Close</a><a class="dropdown-item py-1 px-3 edit" href="#"> <i class="fas fa-cog"></i>Edit</a></div>
-                        </div>
                       </div>
                       <h3 class="h4 mb-0">Village Road</h3>
                     </div>
                     <div class="card-body">
                       <div class="table-responsive">
-                        <table class="table mb-0 table-striped table-hover">
-                          <thead>
-                            <tr>
-                              <th>#</th>
-                              <th>First Name</th>
-                              <th>Last Name</th>
-                              <th>Username</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <th scope="row">1</th>
-                              <td>Mark</td>
-                              <td>Otto</td>
-                              <td>@mdo</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">2</th>
-                              <td>Jacob</td>
-                              <td>Thornton</td>
-                              <td>@fat</td>
-                            </tr>
-                            <tr>
-                              <th class="border-bottom-0" scope="row">3</th>
-                              <td class="border-bottom-0">Larry</td>
-                              <td class="border-bottom-0">the Bird</td>
-                              <td class="border-bottom-0">@twitter</td>
-                            </tr>
-                          </tbody>
-                        </table>
+                        <?php User::getVillageRoads(); ?>
                       </div>
                     </div>
                   </div>
                 </div>
-
-
-
-
-
               </div>
             </div>
           </section>
@@ -312,8 +209,7 @@
             <div class="container-fluid">
               <div class="row gy-2">
                 <div class="col-sm-6 text-sm-end">
-                  <p class="mb-0">Designed by <a class="text-white text-decoration-none">XCoders</a></p>
-                  <!-- Please do not remove the backlink to us unless you support further theme's development at https://bootstrapious.com/donate. It is part of the license conditions. Thank you for understanding :)-->
+                  <p class="mb-0"><a class="text-white text-decoration-none">Road Care</a></p>
                 </div>
               </div>
             </div>

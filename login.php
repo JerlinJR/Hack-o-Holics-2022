@@ -35,7 +35,7 @@
 
 		<!-- higher authorities login -->
 
-		<div class="mod-auth">
+		<!-- <div class="mod-auth">
 			<h2>Moderator Login</h2>
 			<form method="post" action="moderator/moderator.php">
 				<input name="id" type="text" class="id-mod" placeholder="Enter Login Id">
@@ -46,7 +46,7 @@
 				<br>
 				<input type="submit" class="btn btn-primary">
 			</form>
-		</div>
+		</div> -->
 
 		<!-- higher authorities login ends -->
 

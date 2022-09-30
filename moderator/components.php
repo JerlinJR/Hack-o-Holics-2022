@@ -57,11 +57,11 @@ print_r($value[2]);
 							<!-- Navbar Brand -->
 							<a class="navbar-brand d-none d-sm-inline-block" href="index.html">
 								<div class="brand-text d-none d-lg-inline-block">
-									<span>Bootstrap </span>
-									<strong>Dashboard</strong>
+									<span>Road </span>
+									<strong>Care</strong>
 								</div>
 								<div class="brand-text d-none d-sm-inline-block d-lg-none">
-									<strong>BD</strong>
+									<strong>RC</strong>
 								</div>
 							</a>
 							<!-- Toggle Button-->
@@ -299,7 +299,7 @@ print_r($value[2]);
 												</div>
 											</div>
 										</div>
-										<h3 class="h4 mb-0">Concerate Road</h3>
+										<h3 class="h4 mb-0">Enter New Price</h3>
 									</div>
 									<div class="card-body">
 										<p class="text-sm">Upadate to the latest price for best estimation</p>
@@ -370,9 +370,9 @@ print_r($value[2]);
 								<p class="mb-0" id="stains>Your company &copy; 2017-2021</p>
 							</div>
 							<div class=" col-sm-6 text-sm-end ">
-								<p class=" mb-0 ">Design by
+								<p class=" mb-0 ">
 									<a href=" https://bootstrapious.com/p/admin-template "
-										class=" text-white text-decoration-none ">Bootstrapious</a>
+										class=" text-white text-decoration-none ">RoadCare</a>
 								</p>
 								<!-- Please do not remove the backlink to us unless you support further theme's development at https://bootstrapious.com/donate. It is part of the license conditions. Thank you for understanding :)-->
 							</div>
