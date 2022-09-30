@@ -1,8 +1,13 @@
 <?php
 
+include 'Formula.class.php';
+
 class User
 {
     private $conn;
+    private $roadWidth;
+    private $subBaseDepth;
+    private $lengthOfTheRoad;
 
     public static function userLogin($user, $pass)
     {
@@ -79,5 +84,80 @@ class User
             echo "Error updating record: " . $conn->error;
             // return false;
         }
+    }
+
+    public static function GetDbValue($table, $index)
+    {
+        $conn = Database::getConnection();
+        $roadType=(($table== "districtroads")?"district":(($table=="statehighway")?"state":(("village"))));
+        //print_r($roadType);
+        $sql = "SELECT * FROM `$table` WHERE `roadName`= '$roadType road $index';";
+        $result = $conn->query($sql);
+        if ($result->num_rows == 1) {
+            $row = $result->fetch_assoc();
+            //print_r($row) ;
+            return $row;
+        } else {
+            return false;
+        }
+    }
+
+    public static function GetDbPrice()
+    {
+        $conn = Database::getConnection();
+
+        $sql = "SELECT * FROM `materialprice` WHERE 1;";
+        $result = $conn->query($sql);
+        if ($result->num_rows == 1) {
+            $row = $result->fetch_assoc();
+            //print_r($row);
+            return $row;
+        } else {
+            return false;
+        }
+    }
+    public static function SetEstimate($estimate, $table, $index)
+    {
+        $conn = Database::getConnection();
+        $roadType=(($table== "districtroads")?"district":(($table=="statehighway")?"state":(("village"))));
+        $sql = "UPDATE `$table` SET `approximatePrice` = '$estimate' WHERE `roadName`= '$roadType road $index';";
+        
+            
+        if ($conn->query($sql) === true) {
+            echo "Data Inserted";
+        // return true;
+        } else {
+            echo "Error updating record: " . $conn->error;
+            // return false;
+        }
+    }
+    
+
+    
+
+    public static function EstimatePrice($table, $index)
+    {
+        $row = User::GetDbValue($table, $index);
+        $row1 = User::GetDbPrice();
+        $roadWidth = $row["roadWidth"];
+        $subBaseDepth = $row["subBaseDepth"];
+        $lengthOfTheRoad = $row["roadLength"];
+    
+        $baseDepth = $row["baseDepth"];
+        $subBaseLabourCost= $row1["subBaselabourCost"];
+        $subBaseMaterialPrice = $row1["subBaseMaterialPrice"];
+        $baseMaterialPrice = $row1["baseMaterialPrice"];
+        $baselabourCost = $row1["baseLabourCost"];
+        $subBaseVolume = Formula::SubBaseVolume($roadWidth, $subBaseDepth, $lengthOfTheRoad);
+        //print($subBaseVolume);
+        $baseVolume = Formula::BaseVolume($roadWidth, $baseDepth, $lengthOfTheRoad);
+        $totalSubBaseLabourCost = Formula::TotalSubBaseLabourCost($subBaseVolume, $subBaseLabourCost, );
+        $totalSubBaseMaterialPrice = Formula::TotalSubBaseMaterialPrice($subBaseVolume, $subBaseMaterialPrice);
+        $totalBaseMaterialPrice = Formula::TotalBaseMaterialPrice($baseMaterialPrice, $baseVolume);
+        $totalBaseLabourCost=Formula::TotalBaseLabourCost($baseVolume, $baselabourCost);
+        $total = $totalSubBaseLabourCost + $totalBaseMaterialPrice + $totalBaseMaterialPrice + $totalSubBaseLabourCost;
+        print($total);
+
+        return $total;
     }
 }
