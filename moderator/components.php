@@ -1,6 +1,10 @@
 <?php
 include '../libs/load.php';
-$value = array_values(User::getMaterialData());?>
+$value = array_values(User::getMaterialData());
+
+print_r($value[2]);
+
+?>
 
 	<!DOCTYPE html>
 	<html>
@@ -26,7 +30,8 @@ $value = array_values(User::getMaterialData());?>
 		<!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
-		<script src="js/navbar.js" defer> </script>
+		<script src="js/navbar.js" defer>
+		</script>
 	</head>
 
 	<body>
@@ -237,7 +242,7 @@ $value = array_values(User::getMaterialData());?>
 			</header>
 			<div class="page-content d-flex align-items-stretch">
 				<!-- Side Navbar -->
-				
+
 				<div id="template-road"></div>
 
 
@@ -290,14 +295,18 @@ $value = array_values(User::getMaterialData());?>
 												<label class="form-label" for="exampleInputPassword1">Cement Price per Kg
 												</label>
 												<div class="input-group mb-3">
-													<span class="input-group-text">₹</span>
+													<span class="input-group-text">
+														<?php  echo "₹ ". $value[1];   ?>
+													</span>
 													<input class="form-control" type="text" aria-label="Dollar amount (with dot and two decimal places)" name="cement" id="cement">
 												</div>
 
 												<label class="form-label" for="exampleInputPassword1">Mcent Price per Kg
 												</label>
 												<div class="input-group mb-3">
-													<span class="input-group-text">₹</span>
+													<span class="input-group-text">
+														<?php  echo "₹ ". $value[2];   ?>
+													</span>
 													<input class="form-control" type="text" aria-label="Dollar amount (with dot and two decimal places)" name="mcent" id="mcent">
 												</div>
 
@@ -306,7 +315,9 @@ $value = array_values(User::getMaterialData());?>
 												<label class="form-label" for="exampleInputPassword1">Labour Charge per person
 												</label>
 												<div class="input-group mb-3">
-													<span class="input-group-text">₹</span>
+													<span class="input-group-text">
+														<?php  echo "₹ ". $value[3];   ?>
+													</span>
 													<input class="form-control" type="text" aria-label="Dollar amount (with dot and two decimal places)" name="labourcharge"
 													 id="labourcharge">
 												</div>
@@ -315,26 +326,34 @@ $value = array_values(User::getMaterialData());?>
 												<label class="form-label" for="exampleInputPassword1">Agrigator Price
 												</label>
 												<div class="input-group mb-3">
-													<span class="input-group-text">₹</span>
+													<span class="input-group-text">
+														<?php  echo "₹ ". $value[4];   ?>
+													</span>
 													<input class="form-control" type="text" aria-label="Dollar amount (with dot and two decimal places)" name="agrigator" id="agrigator">
 												</div>
 
 												<label class="form-label" for="exampleInputPassword1">Bitumin Price</label>
 												<div class="input-group mb-3">
-													<span class="input-group-text">₹</span>
+													<span class="input-group-text">
+														<?php  echo "₹ ". $value[5];   ?>
+													</span>
 													<input class="form-control" type="text" aria-label="Dollar amount (with dot and two decimal places)" name="bitumin" id="bitumin">
 												</div>
 
 												<label class="form-label" for="exampleInputPassword1">Laying Charge</label>
 												<div class="input-group mb-3">
-													<span class="input-group-text">₹</span>
+													<span class="input-group-text">
+														<?php  echo "₹ ". $value[6];   ?>
+													</span>
 													<input class="form-control" type="text" aria-label="Dollar amount (with dot and two decimal places)" name="layingCharge"
 													 id="layingCharge">
 												</div>
 
 												<label class="form-label" for="exampleInputPassword1">Mixing Charge</label>
 												<div class="input-group mb-3">
-													<span class="input-group-text">₹</span>
+													<span class="input-group-text">
+														<?php  echo "₹ ". $value[7];   ?>
+													</span>
 													<input class="form-control" type="text" aria-label="Dollar amount (with dot and two decimal places)" name="mixingCharge"
 													 id="mixingCharge">
 												</div>
@@ -406,8 +425,9 @@ $value = array_values(User::getMaterialData());?>
 
       <!-- price updater for concerent road  -->
 
-      <script> 
-        var users = <?php echo json_encode($value); ?>;
+      <!-- <script> 
+	  
+        var users = <?php // json_encode($value); ?>;
         document.getElementById(" cement ").value = users[0]; 
         document.getElementById(" mcent ").value = users[1];
         document.getElementById(" labourcharge ").value = users[3];
@@ -415,8 +435,7 @@ $value = array_values(User::getMaterialData());?>
         document.getElementById(" bitumin ").value = users[4];
         document.getElementById(" layingCharge ").value = users[5];
         document.getElementById(" mixingCharge ").value = users[6];
-
-      </script>
+      </script> -->
 
 
 </body>
