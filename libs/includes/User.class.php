@@ -78,7 +78,7 @@ class User
 
         $sql = "UPDATE `clientauth` SET `roadType`='$roadType',`roadName`='$roadName',`depth`='$depth' WHERE `id`='$id'";
         if ($conn->query($sql) === true) {
-            echo "Data Inserted";
+           // echo "Data Inserted";
         // return true;
         } else {
             echo "Error updating record: " . $conn->error;
@@ -124,7 +124,7 @@ class User
         
             
         if ($conn->query($sql) === true) {
-            echo "Data Inserted";
+            //echo "Data Inserted";
         // return true;
         } else {
             echo "Error updating record: " . $conn->error;
@@ -143,7 +143,7 @@ class User
             $i=1;
             while ($row = $result->fetch_assoc()) {
                 User::EstimatePrice("villageroads", $i);
-                echo $row['approximatePrice'];
+                // echo $row['approximatePrice'];
                 $i++;
             }
         }
@@ -159,7 +159,7 @@ class User
             $i=1;
             while ($row = $result->fetch_assoc()) {
                 User::EstimatePrice("districtroads", $i);
-                echo $row['approximatePrice'];
+                // echo $row['approximatePrice'];
                 $i++;
             }
         }
@@ -175,7 +175,7 @@ class User
             $i=1;
             while ($row = $result->fetch_assoc()) {
                 User::EstimatePrice("statehighway", $i);
-                echo $row['approximatePrice'];
+                // echo $row['approximatePrice'];
                 $i++;
             }
         }

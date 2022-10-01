@@ -21,7 +21,8 @@
 /* Client Login Box */
 
 #heading-text{
-    margin-bottom: 30px;
+    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
 }
 
 .client{
@@ -97,8 +98,8 @@
 }
 .road-type{
     width:400px;
-    background-color:aquamarine;
-    border-radius: 10px;
+    background-color:#6FBEDC;
+    border-radius: 30px;
     padding-top:30px;
     
 }
@@ -134,5 +135,17 @@ font-size: 20px;
 border: 0px;
 border-radius: 7px;
 padding-left: 10px;
+}
+
+.btn{
+background: #4763AC;
+border-radius: 10px;
+width: 109px;
+height: 45px;
+font-size:20px;
+font-family: 'Poppins', sans-serif;
+border:0px;
+color:aliceblue;
+margin-bottom:20px;
 }
 

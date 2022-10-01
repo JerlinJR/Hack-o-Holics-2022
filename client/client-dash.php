@@ -47,12 +47,13 @@ if (!empty(isset($arr[0])) and !empty(isset($arr[1])) and !empty(isset($arr[2]))
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>XCoders</title>
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
-		integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 </head>
 
-<body>
+<body style="background-image:url(../images/client.jpg); background-size: cover; repeat:no-repeat;">
 
 	<div class="c-dash">
 		<div style="text-align:center" class="road-type">
@@ -108,10 +109,11 @@ if (!empty(isset($arr[0])) and !empty(isset($arr[1])) and !empty(isset($arr[2]))
 					</select>
 				</div>
 
-				<input type="number" name="damageDepth" id="damage" placeholder="Damage Depth in feet" required />
+				<input type="number" name="damageDepth" id="damage" placeholder="Damage Depth in meter" required />
 				<br>
 				<br>
-				<input type="submit" class="btn btn-primary">
+				<input type="submit" class="btn">
+				
 			</form>
 		</div>
 	</div>

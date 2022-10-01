@@ -18,7 +18,7 @@
 	<div class="moderator">
 		<div class="mod-card">
 			<h3 class="main-text">Moderator Login</h3>
-			<form method="post" action="moderator/moderator.php">
+			<form method="post" action="moderator/home.php">
 				<p class="username">Username</p>
 				<br>
 				<input name="id" class="signin-in" type="text" />
