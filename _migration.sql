@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Sep 30, 2022 at 08:26 PM
+-- Generation Time: Oct 01, 2022 at 02:16 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -56,17 +56,18 @@ CREATE TABLE `districtroads` (
   `roadLength` float NOT NULL,
   `roadWidth` float NOT NULL DEFAULT 12,
   `subBaseDepth` float NOT NULL,
-  `baseDepth` float NOT NULL
+  `baseDepth` float NOT NULL,
+  `approximatePrice` float NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `districtroads`
 --
 
-INSERT INTO `districtroads` (`roadName`, `roadLength`, `roadWidth`, `subBaseDepth`, `baseDepth`) VALUES
-('district road 1', 50000, 12, 0.225, 0.1524),
-('district road 2', 60000, 12, 0.225, 0.1524),
-('district road 3', 40000, 12, 0.225, 0.1524);
+INSERT INTO `districtroads` (`roadName`, `roadLength`, `roadWidth`, `subBaseDepth`, `baseDepth`, `approximatePrice`) VALUES
+('district road 1', 50000, 12, 0.225, 0.1524, 0),
+('district road 2', 60000, 12, 0.225, 0.1524, 0),
+('district road 3', 40000, 12, 0.225, 0.1524, 0);
 
 -- --------------------------------------------------------
 
@@ -119,18 +120,18 @@ CREATE TABLE `statehighway` (
   `roadLength` float NOT NULL,
   `roadWidth` float NOT NULL DEFAULT 12,
   `subBaseDepth` float NOT NULL,
-  `baseDepth` float NOT NULL
+  `baseDepth` float NOT NULL,
+  `approximatePrice` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `statehighway`
 --
 
-INSERT INTO `statehighway` (`roadName`, `roadLength`, `roadWidth`, `subBaseDepth`, `baseDepth`) VALUES
-('state road 1', 50000, 0.225, 0.225, 0.1524),
-('state road 2', 70000, 0.225, 0.225, 0.1524),
-('state road 1', 50000, 0.225, 0.225, 0.1524),
-('state road 3', 90000, 0.225, 0.225, 0.1524);
+INSERT INTO `statehighway` (`roadName`, `roadLength`, `roadWidth`, `subBaseDepth`, `baseDepth`, `approximatePrice`) VALUES
+('state road 2', 70000, 0.225, 0.225, 0.1524, 0),
+('state road 3', 90000, 0.225, 0.225, 0.1524, 0),
+('state road 1', 5000, 3.3, 0.1, 0.14, 0);
 
 -- --------------------------------------------------------
 
@@ -143,17 +144,18 @@ CREATE TABLE `villageroads` (
   `roadLength` float NOT NULL,
   `roadWidth` float NOT NULL DEFAULT 3.75,
   `subBaseDepth` float NOT NULL,
-  `baseDepth` float NOT NULL
+  `baseDepth` float NOT NULL,
+  `approximatePrice` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `villageroads`
 --
 
-INSERT INTO `villageroads` (`roadName`, `roadLength`, `roadWidth`, `subBaseDepth`, `baseDepth`) VALUES
-('village road 1', 2000, 3.75, 0.2, 0.1016),
-('village road 2', 3000, 3.75, 0.2, 0.1016),
-('village road 3', 1000, 3.75, 0.2, 0.1016);
+INSERT INTO `villageroads` (`roadName`, `roadLength`, `roadWidth`, `subBaseDepth`, `baseDepth`, `approximatePrice`) VALUES
+('village road 1', 2000, 3.75, 0.2, 0.1016, 2000),
+('village road 2', 3000, 3.75, 0.2, 0.1016, 0),
+('village road 3', 1000, 3.75, 0.2, 0.1016, 0);
 
 --
 -- Indexes for dumped tables
