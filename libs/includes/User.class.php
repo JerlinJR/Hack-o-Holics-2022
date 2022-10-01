@@ -133,6 +133,53 @@ class User
     }
     
 
+    public static function EstimateLoopvillage()
+    {
+        $conn = Database::getConnection();
+        $sql = "SELECT * from `villageroads`;";
+        $result = $conn->query($sql);
+
+        if ($result) {
+            $i=1;
+            while ($row = $result->fetch_assoc()) {
+                User::EstimatePrice("villageroads", $i);
+                echo $row['approximatePrice'];
+                $i++;
+            }
+        }
+    }
+
+    public static function EstimateLoopdistrict()
+    {
+        $conn = Database::getConnection();
+        $sql = "SELECT * from `districtroads`;";
+        $result = $conn->query($sql);
+
+        if ($result) {
+            $i=1;
+            while ($row = $result->fetch_assoc()) {
+                User::EstimatePrice("districtroads", $i);
+                echo $row['approximatePrice'];
+                $i++;
+            }
+        }
+    }
+
+    public static function EstimateLoopstate()
+    {
+        $conn = Database::getConnection();
+        $sql = "SELECT * from `statehighway`;";
+        $result = $conn->query($sql);
+
+        if ($result) {
+            $i=1;
+            while ($row = $result->fetch_assoc()) {
+                User::EstimatePrice("statehighway", $i);
+                echo $row['approximatePrice'];
+                $i++;
+            }
+        }
+    }
     
 
     public static function EstimatePrice($table, $index)
@@ -156,8 +203,8 @@ class User
         $totalBaseMaterialPrice = Formula::TotalBaseMaterialPrice($baseMaterialPrice, $baseVolume);
         $totalBaseLabourCost=Formula::TotalBaseLabourCost($baseVolume, $baselabourCost);
         $total = $totalSubBaseLabourCost + $totalBaseMaterialPrice + $totalBaseMaterialPrice + $totalSubBaseLabourCost;
-        print($total);
-
+        // print($total);
+        User::SetEstimate($total, $table, $index);
         return $total;
     }
 
@@ -173,12 +220,14 @@ public static function getStateHighway()
     <table class=\"table mb-0 table-striped table-hover\" border=\"5\" cellpadding=\"5\" cellspacing=\"0\" style=\"border-  collapse: collapse\" bordercolor=\"#808080\" width=\"100&#37;\"    id=\"AutoNumber2\" bgcolor=\"#C0C0C0\">
         <tr>
         <th width=100>RoadName</td> 
+        <th width=100>RoadLengthInMeter</td> 
     <th width=100>Approx.Budget</td>
     </tr>";
     while ($row = $result->fetch_assoc()) {
         print "<tr>";
         print "<td>" . $row['roadName'] . "</td>";
-        print "<td>" . $row['approximatePrice'] . "</td>";
+        print "<td>" . $row['roadLength'] . "</td>";
+        print "<td>" . "₹ ".$row['approximatePrice'] . "</td>";
 
         print "</tr>";
     }
@@ -196,12 +245,14 @@ public static function getDistrictRoads()
     <table class=\"table mb-0 table-striped table-hover\" border=\"5\" cellpadding=\"5\" cellspacing=\"0\" style=\"border-  collapse: collapse\" bordercolor=\"#808080\" width=\"100&#37;\"    id=\"AutoNumber2\" bgcolor=\"#C0C0C0\">
         <tr>
         <th width=100>RoadName</td> 
+        <th width=100>RoadLengthInMeter</td> 
     <th width=100>Approx.Budget</td>
     </tr>";
     while ($row = $result->fetch_assoc()) {
         print "<tr>";
         print "<td>" . $row['roadName'] . "</td>";
-        print "<td>" . $row['approximatePrice'] . "</td>";
+        print "<td>" .  $row['roadLength'] . "</td>";
+        print "<td>" . "₹ ".$row['approximatePrice'] . "</td>";
 
         print "</tr>";
     }
@@ -220,12 +271,14 @@ public static function getDistrictRoads()
         <table class=\"table mb-0 table-striped table-hover\"  border=\"5\" cellpadding=\"5\" cellspacing=\"0\" style=\"border-  collapse: collapse\" bordercolor=\"#808080\" width=\"100&#37;\"    id=\"AutoNumber2\" bgcolor=\"#C0C0C0\">
             <tr>
             <th width=100>RoadName</td> 
+            <th width=100>RoadLengthInMeter</td> 
         <th width=100>Approx.Budget</td>
         </tr>";
         while ($row = $result->fetch_assoc()) {
             print "<tr>";
             print "<td>" . $row['roadName'] . "</td>";
-            print "<td>" . $row['approximatePrice'] . "</td>";
+            print "<td>" . $row['roadLength'] . "</td>";
+            print "<td>" ."₹ ". $row['approximatePrice'] . "</td>";
         
 
             print "</tr>";
