@@ -160,4 +160,80 @@ class User
 
         return $total;
     }
+
+
+public static function getStateHighway()
+{
+    $conn = Database::getConnection();
+
+    $sql = "SELECT * FROM `statehighway`;";
+    $result = $conn->query($sql);
+
+    print "
+    <table class=\"table mb-0 table-striped table-hover\" border=\"5\" cellpadding=\"5\" cellspacing=\"0\" style=\"border-  collapse: collapse\" bordercolor=\"#808080\" width=\"100&#37;\"    id=\"AutoNumber2\" bgcolor=\"#C0C0C0\">
+        <tr>
+        <th width=100>RoadName</td> 
+    <th width=100>Approx.Budget</td>
+    </tr>"; 
+    while($row = $result->fetch_assoc())
+    { 
+    print "<tr>"; 
+    print "<td>" . $row['roadName'] . "</td>"; 
+
+    print "</tr>"; 
+    } 
+    print "</table>"; 
+    
 }
+       
+public static function getDistrictRoads(){
+    $conn = Database::getConnection();
+
+    $sql = "SELECT * FROM `districtroads`;";
+    $result = $conn->query($sql);
+
+    print "
+    <table class=\"table mb-0 table-striped table-hover\" border=\"5\" cellpadding=\"5\" cellspacing=\"0\" style=\"border-  collapse: collapse\" bordercolor=\"#808080\" width=\"100&#37;\"    id=\"AutoNumber2\" bgcolor=\"#C0C0C0\">
+        <tr>
+        <th width=100>RoadName</td> 
+    <th width=100>Approx.Budget</td>
+    </tr>"; 
+    while($row = $result->fetch_assoc())
+    { 
+    print "<tr>"; 
+    print "<td>" . $row['roadName'] . "</td>"; 
+
+    print "</tr>"; 
+    } 
+    print "</table>"; 
+    
+}
+
+
+    public static function getVillageRoads(){
+        $conn = Database::getConnection();
+
+        $sql = "SELECT * FROM `villageroads`;";
+        $result = $conn->query($sql);
+
+        print "
+        <table class=\"table mb-0 table-striped table-hover\"  border=\"5\" cellpadding=\"5\" cellspacing=\"0\" style=\"border-  collapse: collapse\" bordercolor=\"#808080\" width=\"100&#37;\"    id=\"AutoNumber2\" bgcolor=\"#C0C0C0\">
+            <tr>
+            <th width=100>RoadName</td> 
+        <th width=100>Approx.Budget</td>
+        </tr>"; 
+        while($row = $result->fetch_assoc())
+        { 
+        print "<tr>"; 
+        print "<td>" . $row['roadName'] . "</td>"; 
+
+        print "</tr>"; 
+        } 
+        print "</table>"; 
+        
+    }
+}
+    
+    
+
+

@@ -7,3 +7,5 @@ include 'libs/load.php';
 print(User::SetEstimate(2000, "villageroads", 1));
 
 // print(Formula::SubBaseVolume(32, 23, 23));
+
+print_r(User::getAllData());
