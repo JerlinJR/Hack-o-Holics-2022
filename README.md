@@ -26,5 +26,5 @@ UI/UX design: [Shibin Sam A](https://github.com/ashibinsam)
     ->By loging into mderator page, the entered data from the client page will be displayed.
     ->According to the road type, and the length of the road, the aprox. price to repair the road will be calculated.
     ->This is accomplished by calculating the volume of damage and by using the labour and material cost of different materials used, 
-    the price will be calculated.
+      the price will be calculated.
 
