@@ -174,19 +174,19 @@ public static function getStateHighway()
         <tr>
         <th width=100>RoadName</td> 
     <th width=100>Approx.Budget</td>
-    </tr>"; 
-    while($row = $result->fetch_assoc())
-    { 
-    print "<tr>"; 
-    print "<td>" . $row['roadName'] . "</td>"; 
+    </tr>";
+    while ($row = $result->fetch_assoc()) {
+        print "<tr>";
+        print "<td>" . $row['roadName'] . "</td>";
+        print "<td>" . $row['approximatePrice'] . "</td>";
 
-    print "</tr>"; 
-    } 
-    print "</table>"; 
-    
+        print "</tr>";
+    }
+    print "</table>";
 }
        
-public static function getDistrictRoads(){
+public static function getDistrictRoads()
+{
     $conn = Database::getConnection();
 
     $sql = "SELECT * FROM `districtroads`;";
@@ -197,20 +197,20 @@ public static function getDistrictRoads(){
         <tr>
         <th width=100>RoadName</td> 
     <th width=100>Approx.Budget</td>
-    </tr>"; 
-    while($row = $result->fetch_assoc())
-    { 
-    print "<tr>"; 
-    print "<td>" . $row['roadName'] . "</td>"; 
+    </tr>";
+    while ($row = $result->fetch_assoc()) {
+        print "<tr>";
+        print "<td>" . $row['roadName'] . "</td>";
+        print "<td>" . $row['approximatePrice'] . "</td>";
 
-    print "</tr>"; 
-    } 
-    print "</table>"; 
-    
+        print "</tr>";
+    }
+    print "</table>";
 }
 
 
-    public static function getVillageRoads(){
+    public static function getVillageRoads()
+    {
         $conn = Database::getConnection();
 
         $sql = "SELECT * FROM `villageroads`;";
@@ -221,19 +221,15 @@ public static function getDistrictRoads(){
             <tr>
             <th width=100>RoadName</td> 
         <th width=100>Approx.Budget</td>
-        </tr>"; 
-        while($row = $result->fetch_assoc())
-        { 
-        print "<tr>"; 
-        print "<td>" . $row['roadName'] . "</td>"; 
-
-        print "</tr>"; 
-        } 
-        print "</table>"; 
+        </tr>";
+        while ($row = $result->fetch_assoc()) {
+            print "<tr>";
+            print "<td>" . $row['roadName'] . "</td>";
+            print "<td>" . $row['approximatePrice'] . "</td>";
         
+
+            print "</tr>";
+        }
+        print "</table>";
     }
 }
-    
-    
-
-
