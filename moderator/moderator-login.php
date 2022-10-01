@@ -10,7 +10,7 @@
 <body>
    <div class="moderator">
     <div class="mod-card">
-        <h3>Moderator Signin</h3>
+        <h3>Moderator Login</h3>
         <form methos="post">
             <label>Username</label><br>
             <input class = "signin-in" type="text" /><br>

@@ -172,8 +172,8 @@ public static function getStateHighway()
     print "
     <table class=\"table mb-0 table-striped table-hover\" border=\"5\" cellpadding=\"5\" cellspacing=\"0\" style=\"border-  collapse: collapse\" bordercolor=\"#808080\" width=\"100&#37;\"    id=\"AutoNumber2\" bgcolor=\"#C0C0C0\">
         <tr>
-        <th width=100>RoadName</td> 
-    <th width=100>Approx.Budget</td>
+        <th >RoadName</td> 
+    <th>Approx.Budget</td>
     </tr>";
     while ($row = $result->fetch_assoc()) {
         print "<tr>";
@@ -195,8 +195,8 @@ public static function getDistrictRoads()
     print "
     <table class=\"table mb-0 table-striped table-hover\" border=\"5\" cellpadding=\"5\" cellspacing=\"0\" style=\"border-  collapse: collapse\" bordercolor=\"#808080\" width=\"100&#37;\"    id=\"AutoNumber2\" bgcolor=\"#C0C0C0\">
         <tr>
-        <th width=100>RoadName</td> 
-    <th width=100>Approx.Budget</td>
+        <th >RoadName</td> 
+    <th >Approx.Budget</td>
     </tr>";
     while ($row = $result->fetch_assoc()) {
         print "<tr>";
@@ -219,8 +219,8 @@ public static function getDistrictRoads()
         print "
         <table class=\"table mb-0 table-striped table-hover\"  border=\"5\" cellpadding=\"5\" cellspacing=\"0\" style=\"border-  collapse: collapse\" bordercolor=\"#808080\" width=\"100&#37;\"    id=\"AutoNumber2\" bgcolor=\"#C0C0C0\">
             <tr>
-            <th width=100>RoadName</td> 
-        <th width=100>Approx.Budget</td>
+            <th >RoadName</td> 
+        <th>Approx.Budget</td>
         </tr>";
         while ($row = $result->fetch_assoc()) {
             print "<tr>";
