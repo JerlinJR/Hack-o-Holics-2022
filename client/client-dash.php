@@ -9,17 +9,16 @@ $arr = array_values($_POST);
 
 
 
-if(!empty(isset($arr[0])) and !empty(isset($arr[1])) and !empty(isset($arr[2])) and !empty(isset($arr[3]))){
+if (!empty(isset($arr[0])) and !empty(isset($arr[1])) and !empty(isset($arr[2])) and !empty(isset($arr[3]))) {
+    $id = $arr[0];
+    $roadType = $arr[1];
+    $roadName = $arr[2];
+    $depth = $arr[3];
 
-	$id = $arr[0];
-	$roadType = $arr[1];
-	$roadName = $arr[2];
-	$depth = $arr[3];
-
-	
-	print(User::roadUpdate($id,$roadType,$roadName,$depth));
+    
+    print(User::roadUpdate($id, $roadType, $roadName, $depth));
 } else {
-	print("Please fill the form");
+    print("Please fill the form");
 }
 
 
@@ -39,86 +38,86 @@ if(!empty(isset($arr[0])) and !empty(isset($arr[1])) and !empty(isset($arr[2])) 
 
 // if ($result) {
 ?>
-	<!DOCTYPE html>
-	<html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 
-	<head>
-		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>XCoders</title>
-		<link rel="stylesheet" type="text/css" href="../css/style.css">
-		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
-		 crossorigin="anonymous">
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-	</head>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>XCoders</title>
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</head>
 
-	<body>
+<body>
 
-		<div class="c-dash">
-			<div style="text-align:center" class="road-type">
-				<h2 id="heading-text">Select the type of Road</h2>
-				<form method="post" action="client-dash.php">
-					<input type="text" name="id" id="id" placeholder="Your ID" required />
-					<br>
+	<div class="c-dash">
+		<div style="text-align:center" class="road-type">
+			<h2 id="heading-text">Select the type of Road</h2>
+			<form method="post" action="client-dash.php">
+				<input type="text" name="id" id="id" placeholder="Your ID" required />
+				<br>
 
-					<select name="roads" id="roads" required>
-						<option value="">None</option>
-						<option value="stateHighway">State Highway</option>
-						<option value="district">District Roads</option>
-						<option value="villageRoad">Village Roads</option>
+				<select name="roads" id="roads" required>
+					<option value="">None</option>
+					<option value="stateHighway">State Highway</option>
+					<option value="district">District Roads</option>
+					<option value="villageRoad">Village Roads</option>
+				</select>
+				<br>
+				<!-- state highway -->
+
+				<div id="stateHighway">
+					<select id="exp" name="stateHighwayRoads">
+						<option selected="true" disabled="disabled">Choose Tagging</option>
+						<option value="SH1">SH1</option>
+						<option value="SH2">SH2</option>
+						<option value="SH3">SH3</option>
+						<option value="SH4">SH4</option>
 					</select>
-					<br>
-					<!-- state highway -->
-
-					<div id="stateHighway">
-						<select id="exp" name="stateHighwayRoads">
-							<option selected="true" disabled="disabled">Choose Tagging</option>
-							<option value="SH1">SH1</option>
-							<option value="SH2">SH2</option>
-							<option value="SH3">SH3</option>
-							<option value="SH4">SH4</option>
-						</select>
-					</div>
+				</div>
 
 
-					<!-- District -->
+				<!-- District -->
 
-					<div id="district">
-						<select id="team" name="districtRoads">
-							<option selected="true" disabled="disabled">Choose Tagging</option>
-							<option value="DR1">DR1</option>
-							<option value="DR2">DR2</option>
-							<option value="DR3">DR3</option>
-							<option value="DR4">DR4</option>
-							<option value="DR5">DR5</option>
-							<option value="DR6">DR6</option>
-						</select>
-					</div>
+				<div id="district">
+					<select id="team" name="districtRoads">
+						<option selected="true" disabled="disabled">Choose Tagging</option>
+						<option value="DR1">DR1</option>
+						<option value="DR2">DR2</option>
+						<option value="DR3">DR3</option>
+						<option value="DR4">DR4</option>
+						<option value="DR5">DR5</option>
+						<option value="DR6">DR6</option>
+					</select>
+				</div>
 
 
-					<!-- Village Road -->
+				<!-- Village Road -->
 
-					<div id="villageRoad">
-						<select id="age" name="villageRoad">
-							<option selected="true" disabled="disabled">Choose Tagging</option>
-							<option value="VR1">VR1</option>
-							<option value="VR2">VR2</option>
-							<option value="VR3">VR3</option>
-							<option value="VR4">VR4</option>
-						</select>
-					</div>
+				<div id="villageRoad">
+					<select id="age" name="villageRoad">
+						<option selected="true" disabled="disabled">Choose Tagging</option>
+						<option value="VR1">VR1</option>
+						<option value="VR2">VR2</option>
+						<option value="VR3">VR3</option>
+						<option value="VR4">VR4</option>
+					</select>
+				</div>
 
-					<input type="number" name="damageDepth" id="damage" placeholder="Damage Depth in feet" required />
-					<br>
-					<br>
-					<input type="submit" class="btn btn-primary">
-				</form>
-			</div>
+				<input type="number" name="damageDepth" id="damage" placeholder="Damage Depth in feet" required />
+				<br>
+				<br>
+				<input type="submit" class="btn btn-primary">
+			</form>
 		</div>
+	</div>
 
 
-	</body>
-	<script src="script.js"></script>
+</body>
+<script src="script.js"></script>
 
-	</html>
+</html>
