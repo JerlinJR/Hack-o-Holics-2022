@@ -1,61 +1,36 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Login</title>
-	<link rel="stylesheet" type="text/css" href="../Hack-o-Holics-2022/css/style.css">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
-		integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+	<title>Road Care</title>
+	<link rel="stylesheet" type="text/css" href="css/modCss.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
 </head>
 
-<body>
-
-	<!-- Login Area -->
-	<div class="login">
-
-		<!-- client login -->
-
-		<div class="client">
-			<h2>Client Login</h2>
-			<form method="post" action="client/client-dash.php">
-				<input name="username" type="text" class="email" placeholder="Enter Your Email">
+<body style="background-image:url(images/signin.jpg); background-size: cover; repeat:no-repeat;">
+	<div class="moderator">
+		<div class="mod-card">
+			<h3 class="main-text">Client Login</h3>
+			<form method="post" action="moderator/moderator.php">
+				<p class="username">Username</p>
 				<br>
+				<input name="id" class="signin-in" type="text" />
 				<br>
-				<input name="password" class="password-client" type="password" placeholder="Enter Your Password">
+				<label class="password">Password</label>
 				<br>
+				<input name="password" class="signin-in" type="password">
 				<br>
-				<input type="submit" class="btn btn-primary">
+				<input type="submit" class="submit-button">
 			</form>
 		</div>
-
-		<!-- client login ends -->
-
-		<!-- higher authorities login -->
-
-		<!-- <div class="mod-auth">
-			<h2>Moderator Login</h2>
-			<form method="post" action="moderator/moderator.php">
-				<input name="id" type="text" class="id-mod" placeholder="Enter Login Id">
-				<br>
-				<br>
-				<input name="password" class="password-mod" type="password" placeholder="Enter Your Password">
-				<br>
-				<br>
-				<input type="submit" class="btn btn-primary">
-			</form>
-		</div> -->
-
-		<!-- higher authorities login ends -->
-
 	</div>
-
 </body>
-<!-- JavaScript Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
-	integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous">
-</script>
 
 </html>
